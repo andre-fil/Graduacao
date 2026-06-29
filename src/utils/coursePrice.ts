@@ -34,6 +34,19 @@ export function shouldShowFromPrice(course: Course, modalityId?: string): boolea
   return Boolean(course.pricesByModality && course.modalityIds.length > 1);
 }
 
+export const EAD_NAME_SUFFIX = ' -ead';
+
+export function getCourseDisplayName(course: Course, modalityId?: string): string {
+  const isEadOnly = course.modalityIds.length === 1 && course.modalityIds[0] === 'ead';
+  if (isEadOnly) return course.name;
+
+  if (modalityId === 'ead' && course.modalityIds.includes('ead')) {
+    return `${course.name}${EAD_NAME_SUFFIX}`;
+  }
+
+  return course.name;
+}
+
 export function formatDiscountPercent(percent: number): string {
   return Number.isInteger(percent) ? String(percent) : percent.toFixed(2).replace('.', ',');
 }

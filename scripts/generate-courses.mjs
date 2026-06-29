@@ -55,11 +55,16 @@ const INGRESS = {
 
 /** @typedef {object} CourseSeed */
 
+function resolveCourseName(name, modalityIds) {
+  const eadOnly = modalityIds.length === 1 && modalityIds[0] === 'ead';
+  return eadOnly ? `${name} -ead` : name;
+}
+
 function buildCourse(c) {
   return {
     id: c.id,
     slug: c.id,
-    name: c.name,
+    name: resolveCourseName(c.name, c.modalityIds),
     degree: c.degree,
     areaId: c.areaId,
     modalityIds: c.modalityIds,

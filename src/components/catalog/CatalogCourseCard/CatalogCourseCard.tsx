@@ -4,6 +4,7 @@ import { getModalityById } from '../../../services';
 import { formatCurrency } from '../../../utils/formatCurrency';
 import {
   formatDiscountPercent,
+  getCourseDisplayName,
   getCoursePriceForModality,
   shouldShowFromPrice,
 } from '../../../utils/coursePrice';
@@ -46,7 +47,7 @@ export function CatalogCourseCard({ course, modalityId }: CatalogCourseCardProps
           ))}
         </div>
 
-        <h2 className={styles.title}>{course.name}</h2>
+        <h2 className={styles.title}>{getCourseDisplayName(course, modalityId)}</h2>
 
         <div className={styles.priceBlock}>
           {fromPrice && <span className={styles.fromLabel}>a partir de</span>}

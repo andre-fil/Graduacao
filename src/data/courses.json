@@ -571,7 +571,7 @@
   {
     "id": "servico-social",
     "slug": "servico-social",
-    "name": "Serviço Social",
+    "name": "Serviço Social -ead",
     "degree": "Bacharelado",
     "areaId": "humanas",
     "modalityIds": [
@@ -792,7 +792,7 @@
   {
     "id": "ciencias-contabeis",
     "slug": "ciencias-contabeis",
-    "name": "Ciências Contábeis",
+    "name": "Ciências Contábeis -ead",
     "degree": "Bacharelado",
     "areaId": "gestao-negocios",
     "modalityIds": [
@@ -899,7 +899,7 @@
   {
     "id": "agronegocio",
     "slug": "agronegocio",
-    "name": "Tecnólogo em Agronegócio",
+    "name": "Tecnólogo em Agronegócio -ead",
     "degree": "Tecnólogo",
     "areaId": "agronegocio",
     "modalityIds": [
@@ -1007,7 +1007,7 @@
   {
     "id": "administracao",
     "slug": "administracao",
-    "name": "Administração",
+    "name": "Administração -ead",
     "degree": "Bacharelado",
     "areaId": "gestao-negocios",
     "modalityIds": [
