@@ -1,0 +1,22 @@
+.section {
+  padding: var(--spacing-3xl) 0;
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.mobileLink {
+  display: none;
+  text-align: center;
+  margin-top: var(--spacing-xl);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .mobileLink {
+    display: block;
+  }
+}

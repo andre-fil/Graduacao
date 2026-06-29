@@ -1,0 +1,19 @@
+.header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.title {
+  margin-bottom: var(--spacing-sm);
+}
+
+.description {
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+
+.actions {
+  margin-top: var(--spacing-md);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}

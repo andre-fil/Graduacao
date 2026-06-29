@@ -1,0 +1,1 @@
+export { CourseInfoGrid } from './CourseInfoGrid';

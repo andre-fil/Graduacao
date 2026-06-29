@@ -1,0 +1,6 @@
+[
+  { "id": "ate-300", "label": "Até R$ 300", "min": 0, "max": 300 },
+  { "id": "301-500", "label": "R$ 301 a R$ 500", "min": 301, "max": 500 },
+  { "id": "501-700", "label": "R$ 501 a R$ 700", "min": 501, "max": 700 },
+  { "id": "acima-700", "label": "Acima de R$ 700", "min": 701, "max": null }
+]

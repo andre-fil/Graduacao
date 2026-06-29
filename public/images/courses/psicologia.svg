@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Psicologia">
+  <rect width="400" height="240" fill="#0d3d6b"/>
+  <rect x="0" y="180" width="400" height="60" fill="#0080D8" opacity="0.85"/>
+  <text x="32" y="110" fill="#ffffff" font-family="system-ui,sans-serif" font-size="28" font-weight="700">Psicologia</text>
+</svg>

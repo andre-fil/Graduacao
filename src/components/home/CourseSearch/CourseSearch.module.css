@@ -1,0 +1,83 @@
+.form {
+  width: 100%;
+}
+
+.label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  background: var(--color-background);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.inputWrapper:focus-within {
+  border-color: var(--color-primary);
+}
+
+.icon {
+  flex-shrink: 0;
+  margin-left: var(--spacing-md);
+  color: var(--color-text-muted);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  padding: var(--spacing-md);
+  background: transparent;
+  color: var(--color-text);
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.submit {
+  flex-shrink: 0;
+  border: none;
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  font-weight: 600;
+  padding: var(--spacing-md) var(--spacing-lg);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.submit:hover {
+  background: var(--color-accent);
+}
+
+.large .input,
+.large .submit {
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+}
+
+@media (max-width: 540px) {
+  .submit {
+    padding: var(--spacing-md);
+    font-size: 0;
+  }
+
+  .submit::after {
+    content: '→';
+    font-size: 1.125rem;
+  }
+}

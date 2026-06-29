@@ -1,0 +1,32 @@
+[
+  {
+    "id": "gestao-negocios",
+    "name": "Gestão e Negócios",
+    "description": "Cursos voltados à administração, gestão, contabilidade e empreendedorismo."
+  },
+  {
+    "id": "saude",
+    "name": "Saúde",
+    "description": "Formação para atuação em áreas da saúde e bem-estar."
+  },
+  {
+    "id": "educacao",
+    "name": "Educação",
+    "description": "Formação de profissionais para atuar no ensino e na gestão educacional."
+  },
+  {
+    "id": "engenharia",
+    "name": "Engenharia",
+    "description": "Cursos de engenharia com foco em infraestrutura e desenvolvimento."
+  },
+  {
+    "id": "humanas",
+    "name": "Ciências Humanas",
+    "description": "Cursos das áreas jurídica, social e comportamental."
+  },
+  {
+    "id": "agronegocio",
+    "name": "Agronegócio",
+    "description": "Formação para gestão e inovação no setor agropecuário."
+  }
+]

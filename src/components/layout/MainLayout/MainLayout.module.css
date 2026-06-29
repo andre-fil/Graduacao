@@ -1,0 +1,17 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  --whatsapp-offset: calc(72px + env(safe-area-inset-bottom, 0px));
+}
+
+.main {
+  flex: 1;
+  padding-bottom: var(--whatsapp-offset);
+}
+
+@media (min-width: 768px) {
+  .layout {
+    --whatsapp-offset: calc(80px + env(safe-area-inset-bottom, 0px));
+  }
+}

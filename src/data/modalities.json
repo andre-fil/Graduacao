@@ -1,0 +1,14 @@
+[
+  {
+    "id": "presencial",
+    "name": "Presencial",
+    "description": "Aulas presenciais com estrutura completa de campus e interação direta com professores.",
+    "highlight": "Experiência imersiva no campus"
+  },
+  {
+    "id": "ead",
+    "name": "EAD",
+    "description": "Estude de onde estiver com plataforma digital, tutoria e flexibilidade de horários.",
+    "highlight": "Flexibilidade total"
+  }
+]

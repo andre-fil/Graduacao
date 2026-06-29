@@ -1,0 +1,9 @@
+.content {
+  text-align: center;
+}
+
+.content header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,61 @@
+.section {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  padding: var(--spacing-3xl) var(--spacing-md);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  align-items: flex-start;
+}
+
+.title {
+  font-size: clamp(1.5rem, 3.5vw, 2.125rem);
+  font-weight: 800;
+  margin-bottom: var(--spacing-md);
+}
+
+.description {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 56ch;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.whatsappBtn {
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  color: var(--color-text-inverse) !important;
+}
+
+.whatsappBtn:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .content {
+    flex: 1;
+  }
+
+  .actions {
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

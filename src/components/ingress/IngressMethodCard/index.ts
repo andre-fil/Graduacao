@@ -1,0 +1,1 @@
+export { IngressMethodCard } from './IngressMethodCard';

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Ciência da Computação">
+  <rect width="400" height="240" fill="#191266"/>
+  <rect x="0" y="180" width="400" height="60" fill="#0066b3" opacity="0.9"/>
+  <text x="32" y="90" fill="#ffffff" font-family="system-ui,sans-serif" font-size="30" font-weight="700">Ciência da</text>
+  <text x="32" y="125" fill="#ffffff" font-family="system-ui,sans-serif" font-size="30" font-weight="700">Computação</text>
+  <text x="32" y="160" fill="#b3dbff" font-family="system-ui,sans-serif" font-size="16">Bacharelado</text>
+</svg>

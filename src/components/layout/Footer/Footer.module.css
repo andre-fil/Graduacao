@@ -1,0 +1,35 @@
+.footer {
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-primary-dark);
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: auto;
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
+  text-align: center;
+}
+
+.brand {
+  margin: 0 0 var(--spacing-xs);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #fff;
+}
+
+.text {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.copyright {
+  margin: var(--spacing-md) 0 0;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.5);
+}

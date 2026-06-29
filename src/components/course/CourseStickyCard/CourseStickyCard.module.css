@@ -1,0 +1,135 @@
+.card {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.label {
+  margin: 0 0 var(--spacing-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-xs);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+@media (max-width: 400px) {
+  .toggle {
+    grid-template-columns: 1fr;
+  }
+}
+
+.toggleBtn {
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.toggleBtn:hover {
+  color: var(--color-primary-dark);
+}
+
+.toggleBtnActive {
+  background: var(--color-background);
+  color: var(--color-primary-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+.priceBlock {
+  margin-bottom: var(--spacing-md);
+}
+
+.priceLabel {
+  margin: 0 0 var(--spacing-xs);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.price {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.priceSuffix {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.reference {
+  margin: var(--spacing-sm) 0 0;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.reference strong {
+  color: var(--color-text);
+}
+
+.discount {
+  margin: 0 0 var(--spacing-lg);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.discountBadge {
+  display: inline-block;
+  background: #e8f8ee;
+  color: #1a7a42;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-full);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.action,
+.whatsapp {
+  width: 100%;
+}
+
+.whatsapp {
+  border-color: var(--color-whatsapp) !important;
+  color: #1a7a42 !important;
+}
+
+.whatsapp:hover {
+  background: #e8f8ee !important;
+}

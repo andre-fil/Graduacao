@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Administração EAD">
+  <rect width="1600" height="900" fill="#0066b3"/>
+  <rect x="80" y="80" width="600" height="740" rx="16" fill="#ffffff" opacity="0.1"/>
+  <text x="80" y="400" fill="#ffffff" font-family="system-ui,sans-serif" font-size="64" font-weight="800">Administração EAD</text>
+  <text x="80" y="500" fill="#e8f4fc" font-family="system-ui,sans-serif" font-size="36">Estude de onde estiver com diploma MEC</text>
+</svg>

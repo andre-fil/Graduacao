@@ -1,0 +1,30 @@
+{
+  "generalInfo": "Escolha a forma de ingresso que melhor se encaixa no seu perfil. Todas as modalidades utilizam o mesmo processo de inscrição online na FEMAF.",
+  "enrollmentUrl": "https://www.femaf.com.br/ingresso",
+  "methods": [
+    {
+      "id": "vestibular",
+      "name": "Vestibular",
+      "description": "Prova presencial ou online para candidatos que concluíram o ensino médio.",
+      "requiredDocuments": []
+    },
+    {
+      "id": "enem",
+      "name": "ENEM",
+      "description": "Utilize sua nota do Exame Nacional do Ensino Médio para ingresso.",
+      "requiredDocuments": []
+    },
+    {
+      "id": "transferencia",
+      "name": "Transferência",
+      "description": "Para alunos de outras instituições que desejam continuar seus estudos na FEMAF.",
+      "requiredDocuments": []
+    },
+    {
+      "id": "segunda-graduacao",
+      "name": "Segunda Graduação",
+      "description": "Para quem já possui diploma de curso superior e deseja uma nova formação.",
+      "requiredDocuments": []
+    }
+  ]
+}
