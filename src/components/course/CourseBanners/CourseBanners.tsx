@@ -1,12 +1,13 @@
 import type { CourseBanner } from '../../../types';
-import { getAssetUrl } from '../../../utils/getAssetUrl';
+import { getCourseCoverUrl } from '../../../utils/courseCovers';
 import styles from './CourseBanners.module.css';
 
 interface CourseBannersProps {
   banners: CourseBanner[];
+  courseSlug: string;
 }
 
-export function CourseBanners({ banners }: CourseBannersProps) {
+export function CourseBanners({ banners, courseSlug }: CourseBannersProps) {
   if (banners.length === 0) return null;
 
   return (
@@ -19,7 +20,7 @@ export function CourseBanners({ banners }: CourseBannersProps) {
         {banners.map((banner) => {
           const image = (
             <img
-              src={getAssetUrl(banner.image)}
+              src={getCourseCoverUrl(courseSlug)}
               alt={banner.alt}
               className={styles.image}
               loading="lazy"

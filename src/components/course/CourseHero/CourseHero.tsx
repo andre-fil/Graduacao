@@ -1,5 +1,5 @@
 import type { Course } from '../../../types';
-import { getAssetUrl } from '../../../utils/getAssetUrl';
+import { getCourseCoverUrl } from '../../../utils/courseCovers';
 import styles from './CourseHero.module.css';
 
 interface CourseHeroProps {
@@ -11,7 +11,7 @@ export function CourseHero({ course }: CourseHeroProps) {
     <section className={styles.hero} aria-label={`Apresentação do curso de ${course.name}`}>
       <div className={styles.imageWrapper}>
         <img
-          src={getAssetUrl(course.image)}
+          src={getCourseCoverUrl(course.slug)}
           alt={`Imagem principal do curso de ${course.name}`}
           className={styles.image}
         />

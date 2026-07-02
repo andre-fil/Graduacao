@@ -32,7 +32,8 @@ export function getCoursesByArea(areaId: string): Course[] {
 }
 
 export function getAllAreas(): Area[] {
-  return areas;
+  const usedAreaIds = new Set(courses.map((course) => course.areaId));
+  return areas.filter((area) => usedAreaIds.has(area.id));
 }
 
 export function getAreaById(id: string): Area | undefined {

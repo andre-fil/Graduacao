@@ -1,13 +1,11 @@
-import { readFileSync, writeFileSync } from 'node:fs';
+import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const LOREM_MEC = 'Cursos reconhecidos pelo MEC';
 const LOREM_EMEC = '00000';
-const SCHEDULE_MATUTINO = 'De acordo com planejamento do curso';
 const SCHEDULE_NOTURNO = '18:30 às 22:00';
 const SCHEDULE_EAD = 'Horários flexíveis na plataforma EAD';
-const LOREM_OTHER = 'Lorem ipsum — condição de desconto a confirmar';
-const IMG = 'images/banners/banner-padrao.png';
+const IMG = 'course-cover';
 const BANNER = [{ id: 'banner-padrao', image: IMG, alt: 'Banner promocional FEMAF — Graduação' }];
 
 /** Mensalidades presencial sede 2026 (reajuste 5%) */
@@ -20,10 +18,12 @@ function eadPrice(punctualityDiscount, punctualityPercent) {
     Math.round((punctualityDiscount / (1 - punctualityPercent / 100)) * 100) / 100;
   return { original, punctualityDiscount, punctualityPercent };
 }
+
 const CURRICULUM = [
   { semester: 1, disciplines: ['Lorem ipsum dolor', 'Consectetur adipiscing', 'Vestibulum ante ipsum', 'Praesent commodo'] },
   { semester: 2, disciplines: ['Magna fringilla urna', 'Mollis pretium nisl', 'Donec sed odio dui', 'Aenean lacinia bibendum'] },
 ];
+
 const FAQ = [
   {
     question: 'Quais as formas de ingresso?',
@@ -41,6 +41,7 @@ const FAQ = [
       'Sim. A Faculdade de Educação Memorial Adelaide Franco (FEMAF) conta com infraestrutura na sede presencial, incluindo laboratórios, biblioteca e espaços de convivência que apoiam a formação prática. A disponibilidade de laboratórios específicos varia conforme a área do curso.',
   },
 ];
+
 const INGRESS = {
   vestibular: true,
   enem: true,
@@ -52,8 +53,6 @@ const INGRESS = {
   enrollmentUrl: '',
   notes: { geral: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
 };
-
-/** @typedef {object} CourseSeed */
 
 function resolveCourseName(name, modalityIds) {
   const eadOnly = modalityIds.length === 1 && modalityIds[0] === 'ead';
@@ -82,7 +81,6 @@ function buildCourse(c) {
       punctualityDiscount: c.price.punctualityDiscount,
       punctualityPercent: c.price.punctualityPercent,
     },
-    ...(c.pricesByModality ? { pricesByModality: c.pricesByModality } : {}),
     summary: c.summary,
     description: c.description,
     highlights: c.highlights,
@@ -97,81 +95,6 @@ function buildCourse(c) {
 }
 
 const courses = [
-  {
-    id: 'educacao-fisica',
-    name: 'Educação Física',
-    degree: 'Licenciatura / Bacharelado',
-    areaId: 'educacao',
-    modalityIds: ['presencial'],
-    featured: false,
-    tags: ['educação física', 'esporte', 'presencial', 'licenciatura'],
-    duration: '4 anos',
-    workload: '3.200 horas',
-    shift: ['matutino', 'noturno'],
-    schedules: [
-      { shift: 'matutino', time: SCHEDULE_MATUTINO },
-      { shift: 'noturno', time: SCHEDULE_NOTURNO },
-    ],
-    price: presencialPrice(445.98, 15, 379.0),
-    summary: 'Formação completa para atuar na educação, saúde e esporte com base científica e prática profissional.',
-    description:
-      'O curso de Educação Física da FEMAF prepara profissionais para planejar, prescrever e orientar práticas corporais em escolas, academias, clubes e projetos esportivos. A formação integra fundamentos pedagógicos, científicos e biomecânicos com vivências práticas ao longo da graduação.\n\nO egresso desenvolve competências para promover saúde, qualidade de vida e desempenho motor, atuando com ética e responsabilidade social. O currículo contempla estágios supervisionados e atividades que aproximam o estudante das demandas reais do mercado.\n\nCom habilitação em licenciatura e bacharelado, o curso amplia as possibilidades de atuação em ambientes educacionais, esportivos e de promoção da saúde.',
-    highlights: ['Dupla habilitação Licenciatura e Bacharelado', 'Laboratórios e práticas esportivas', 'Estágios supervisionados', 'Mercado em constante expansão'],
-    graduateProfile:
-      'O egresso de Educação Física da FEMAF é um profissional capacitado para planejar, implementar e avaliar programas de atividade física e esporte. Domina conhecimentos sobre anatomia, fisiologia, treinamento e didática, atuando de forma crítica e humanizada.\n\nEstá preparado para liderar grupos, orientar práticas corporais e contribuir para a saúde coletiva, respeitando a diversidade e as necessidades de cada indivíduo.',
-    jobMarket:
-      'O mercado para profissionais de Educação Física permanece aquecido, com oportunidades em escolas, academias, clubes esportivos, consultorias e projetos de saúde. A valorização do bem-estar e do esporte impulsiona a demanda por especialistas qualificados.\n\nEmpresas, clínicas e instituições públicas também buscam esses profissionais para programas de qualidade de vida e prevenção.',
-    careerPaths: ['Professor de Educação Física', 'Personal trainer', 'Preparador físico', 'Gestor esportivo', 'Instrutor de atividades físicas', 'Consultor em saúde e condicionamento'],
-  },
-  {
-    id: 'engenharia-civil',
-    name: 'Engenharia Civil',
-    degree: 'Bacharelado',
-    areaId: 'engenharia',
-    modalityIds: ['presencial'],
-    featured: true,
-    tags: ['engenharia', 'construção', 'infraestrutura', 'presencial'],
-    duration: '5 anos',
-    workload: '3.600 horas',
-    shift: ['noturno'],
-    schedules: [{ shift: 'noturno', time: SCHEDULE_NOTURNO }],
-    price: presencialPrice(1249.0, 25, 936.75),
-    summary: 'Projete e gerencie obras de infraestrutura com sólida formação técnica e visão sustentável.',
-    description:
-      'A Engenharia Civil na FEMAF forma profissionais aptos a projetar, dimensionar e gerenciar obras de construção civil, saneamento e infraestrutura urbana. A grade equilibra teoria e prática em laboratórios, projetos integradores e atividades de campo.\n\nO estudante desenvolve raciocínio analítico, domínio de normas técnicas e capacidade de liderar equipes em diferentes etapas de empreendimentos. A formação enfatiza sustentabilidade, segurança e eficiência nos processos construtivos.\n\nAo longo do curso, o aluno é preparado para atuar em empresas, órgãos públicos e escritórios de engenharia com responsabilidade técnica e ética profissional.',
-    highlights: ['Laboratórios de materiais e estruturas', 'Projetos integradores', 'Foco em sustentabilidade', 'Alta empregabilidade no setor'],
-    graduateProfile:
-      'O engenheiro civil egresso da FEMAF domina os fundamentos de estruturas, geotecnia, hidráulica e gestão de obras. É capaz de elaborar projetos, orçamentos e cronogramas, fiscalizando a execução com critério técnico.\n\nAtua com compromisso com a segurança, o meio ambiente e a qualidade das construções, contribuindo para o desenvolvimento urbano e social.',
-    jobMarket:
-      'A construção civil e o setor de infraestrutura seguem entre os que mais empregam no país. Engenheiros civis encontram oportunidades em construtoras, incorporadoras, concessionárias, prefeituras e consultorias especializadas.\n\nA expansão urbana e as obras de saneamento e mobilidade mantêm a demanda por profissionais qualificados.',
-    careerPaths: ['Engenheiro civil', 'Orçamentista', 'Fiscal de obras', 'Gestor de projetos', 'Consultor em estruturas', 'Empreendedor na construção civil'],
-  },
-  {
-    id: 'farmacia',
-    name: 'Farmácia',
-    degree: 'Bacharelado',
-    areaId: 'saude',
-    modalityIds: ['presencial'],
-    featured: true,
-    tags: ['farmácia', 'saúde', 'medicamentos', 'presencial'],
-    duration: '5 anos',
-    workload: '4.000 horas',
-    shift: ['matutino', 'noturno'],
-    schedules: [
-      { shift: 'matutino', time: SCHEDULE_MATUTINO },
-      { shift: 'noturno', time: SCHEDULE_NOTURNO },
-    ],
-    price: presencialPrice(1311.45, 30, 918.0),
-    summary: 'Atue na promoção da saúde com domínio de medicamentos, análises clínicas e atenção farmacêutica.',
-    description:
-      'O curso de Farmácia da FEMAF forma profissionais para desenvolver, produzir, dispensar e monitorar medicamentos com segurança e responsabilidade. A formação combina bases científicas, prática laboratorial e estágios em farmácias e instituições de saúde.\n\nO estudante aprende a atuar na atenção farmacêutica, orientando pacientes e contribuindo para o uso racional de medicamentos. O currículo abrange áreas como farmacologia, química, microbiologia e legislação sanitária.\n\nA FEMAF oferece infraestrutura de laboratórios e parcerias que aproximam o aluno da realidade profissional desde os primeiros semestres.',
-    highlights: ['Laboratórios equipados', 'Estágios em farmácias e hospitais', 'Atenção farmacêutica', 'Alta demanda no setor de saúde'],
-    graduateProfile:
-      'O farmacêutico formado pela FEMAF é um profissional generalista, ético e tecnicamente competente. Está apto a atuar na indústria farmacêutica, em farmácias, hospitais, análises clínicas e vigilância sanitária.\n\nPossui visão crítica sobre a cadeia de medicamentos e compromisso com a saúde pública e o bem-estar dos pacientes.',
-    jobMarket:
-      'O setor farmacêutico e de saúde apresenta demanda constante por farmacêuticos em redes de farmácia, hospitais, indústria e órgãos reguladores. A expansão da atenção farmacêutica amplia as oportunidades de atuação.\n\nProfissionais atualizados e com perfil humanizado são especialmente valorizados pelo mercado.',
-    careerPaths: ['Farmacêutico clínico', 'Farmacêutico hospitalar', 'Analista de qualidade', 'Pesquisador', 'Gestor em farmácia', 'Consultor regulatório'],
-  },
   {
     id: 'direito',
     name: 'Direito',
@@ -200,25 +123,18 @@ const courses = [
     name: 'Pedagogia',
     degree: 'Licenciatura',
     areaId: 'educacao',
-    modalityIds: ['presencial', 'ead'],
+    modalityIds: ['ead'],
     featured: true,
-    tags: ['pedagogia', 'educação', 'licenciatura', 'presencial', 'ead'],
+    tags: ['pedagogia', 'educação', 'licenciatura', 'ead'],
     duration: '4 anos',
     workload: '3.200 horas',
-    shift: ['matutino', 'noturno', 'ead'],
-    schedules: [
-      { shift: 'matutino', time: SCHEDULE_MATUTINO },
-      { shift: 'noturno', time: SCHEDULE_NOTURNO },
-      { shift: 'ead', time: SCHEDULE_EAD },
-    ],
-    price: presencialPrice(254.67, 10, 229.2),
-    pricesByModality: {
-      ead: eadPrice(159.9, 30.78),
-    },
+    shift: ['ead'],
+    schedules: [{ shift: 'ead', time: SCHEDULE_EAD }],
+    price: eadPrice(159.9, 30.78),
     summary: 'Transforme vidas pela educação com formação humanista, prática e compromisso social.',
     description:
-      'O curso de Pedagogia da FEMAF prepara educadores para planejar, coordenar e avaliar processos de ensino e aprendizagem na educação infantil e nos anos iniciais do ensino fundamental. A formação une teoria pedagógica, prática em sala de aula e reflexão crítica sobre a educação brasileira.\n\nDisponível nas modalidades presencial e EAD, o curso oferece flexibilidade sem abrir mão da qualidade. Estágios supervisionados e atividades práticas conectam o estudante à realidade das instituições de ensino.\n\nO egresso desenvolve sensibilidade para a diversidade, domínio de metodologias ativas e competências para a gestão educacional.',
-    highlights: ['Presencial e EAD', 'Estágios supervisionados', 'Formação humanista', 'Atuação em educação infantil e anos iniciais'],
+      'O curso de Pedagogia da FEMAF prepara educadores para planejar, coordenar e avaliar processos de ensino e aprendizagem na educação infantil e nos anos iniciais do ensino fundamental. A formação une teoria pedagógica, prática em sala de aula e reflexão crítica sobre a educação brasileira.\n\nOferecido em EAD, o curso oferece flexibilidade sem abrir mão da qualidade. Estágios supervisionados e atividades práticas conectam o estudante à realidade das instituições de ensino.\n\nO egresso desenvolve sensibilidade para a diversidade, domínio de metodologias ativas e competências para a gestão educacional.',
+    highlights: ['100% EAD', 'Estágios supervisionados', 'Formação humanista', 'Atuação em educação infantil e anos iniciais'],
     graduateProfile:
       'O pedagogo formado pela FEMAF é um educador reflexivo, comprometido com a transformação social por meio da educação. Domina planejamento pedagógico, avaliação da aprendizagem e mediação de conflitos em ambientes escolares.\n\nEstá apto a atuar em sala de aula, coordenação pedagógica e projetos educacionais em diferentes contextos.',
     jobMarket:
@@ -247,32 +163,6 @@ const courses = [
     jobMarket:
       'Assistentes sociais são fundamentais em CRAS, CREAS, hospitais, empresas, ONGs e governos. A implementação de políticas sociais e a ampliação de serviços de proteção mantêm a demanda por esses profissionais.\n\nHá também oportunidades em consultorias, responsabilidade social empresarial e pesquisa aplicada.',
     careerPaths: ['Assistente social', 'Gestor em políticas sociais', 'Consultor em responsabilidade social', 'Docente', 'Analista de projetos sociais', 'Coordenador de programas públicos'],
-  },
-  {
-    id: 'psicologia',
-    name: 'Psicologia',
-    degree: 'Bacharelado',
-    areaId: 'humanas',
-    modalityIds: ['presencial'],
-    featured: true,
-    tags: ['psicologia', 'saúde mental', 'clínica', 'presencial'],
-    duration: '5 anos',
-    workload: '4.000 horas',
-    shift: ['matutino', 'noturno'],
-    schedules: [
-      { shift: 'matutino', time: SCHEDULE_MATUTINO },
-      { shift: 'noturno', time: SCHEDULE_NOTURNO },
-    ],
-    price: presencialPrice(1030.28, 20, 824.0),
-    summary: 'Compreenda o comportamento humano e atue na promoção da saúde mental e do bem-estar.',
-    description:
-      'O curso de Psicologia da FEMAF forma profissionais para atuar em clínica, organizações, escolas e comunidades, com base científica e abordagem humanizada. O currículo abrange áreas como desenvolvimento humano, psicopatologia, avaliação psicológica e intervenções terapêuticas.\n\nEstágios supervisionados e atividades práticas em clínica-escola permitem ao estudante desenvolver escuta, análise e intervenção sob orientação de profissionais experientes. A formação enfatiza ética, reflexividade e respeito à diversidade.\n\nO egresso está preparado para compreender o comportamento humano em suas múltiplas dimensões e contribuir para a saúde mental individual e coletiva.',
-    highlights: ['Clínica-escola e estágios supervisionados', 'Formação humanista e científica', 'Diversas áreas de atuação', 'Ênfase em ética profissional'],
-    graduateProfile:
-      'O psicólogo formado pela FEMAF domina fundamentos teóricos e métodos de intervenção psicológica. É capaz de realizar avaliações, conduzir processos terapêuticos e atuar em contextos clínicos, educacionais e organizacionais.\n\nDesenvolve postura ética, escuta qualificada e capacidade de trabalhar em equipes multidisciplinares.',
-    jobMarket:
-      'A demanda por psicólogos cresce em clínicas, hospitais, escolas, empresas e atendimento online. A valorização da saúde mental ampliou oportunidades em consultórios privados, programas corporativos e serviços públicos.\n\nProfissionais com formação sólida e perfil empático encontram espaço em diversos segmentos.',
-    careerPaths: ['Psicólogo clínico', 'Psicólogo organizacional', 'Psicólogo escolar', 'Psicólogo hospitalar', 'Neuropsicólogo', 'Consultor em saúde mental'],
   },
   {
     id: 'ciencias-contabeis',

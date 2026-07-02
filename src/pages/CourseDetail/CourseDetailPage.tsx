@@ -56,7 +56,7 @@ export function CourseDetailPage() {
               <CourseInfoGrid course={course} />
             </CourseSection>
 
-            <CourseBanners banners={course.banners} />
+            <CourseBanners banners={course.banners} courseSlug={course.slug} />
 
             <CourseSection id="graduate-profile" title="Perfil do egresso">
               <p>{course.graduateProfile}</p>

@@ -17,7 +17,7 @@ export const LOREM_SCHEDULE = SCHEDULE_NOTURNO;
 
 export const LOREM_OTHER_DISCOUNT = 'Lorem ipsum — condição de desconto a confirmar';
 
-export const DEFAULT_BANNER_PATH = 'images/banners/banner-padrao.png';
+export const DEFAULT_BANNER_PATH = 'course-cover';
 
 export const DEFAULT_BANNER_ALT = 'Banner promocional FEMAF — Graduação';
 

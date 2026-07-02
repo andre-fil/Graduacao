@@ -1,14 +1,14 @@
 import { ROUTES } from '../../../app/routes';
 import type { Course } from '../../../types';
 import { getModalityById } from '../../../services';
-import { formatCurrency } from '../../../utils/formatCurrency';
+import { getCourseCoverUrl } from '../../../utils/courseCovers';
 import {
   formatDiscountPercent,
   getCourseDisplayName,
   getCoursePriceForModality,
   shouldShowFromPrice,
 } from '../../../utils/coursePrice';
-import { getAssetUrl } from '../../../utils/getAssetUrl';
+import { formatCurrency } from '../../../utils/formatCurrency';
 import { Button } from '../../ui/Button';
 import styles from './CatalogCourseCard.module.css';
 
@@ -31,7 +31,7 @@ export function CatalogCourseCard({ course, modalityId }: CatalogCourseCardProps
     <article className={styles.card}>
       <div className={styles.imageWrapper}>
         <img
-          src={getAssetUrl(course.image)}
+          src={getCourseCoverUrl(course.slug)}
           alt={`Imagem do curso de ${course.name}`}
           className={styles.image}
           loading="lazy"
