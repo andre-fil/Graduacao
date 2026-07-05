@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom';
 import { ROUTES } from '../../../app/routes';
+import { enrollmentLinkProps } from '../../../constants/enrollment';
 import { useCourses } from '../../../hooks/useCourses';
 import { Button } from '../../ui/Button';
+import { EnrollmentButton } from '../../ui/EnrollmentButton';
 import { CourseSearch } from '../CourseSearch';
 import styles from './HeroSection.module.css';
 
@@ -25,6 +26,7 @@ export function HeroSection() {
           <CourseSearch size="large" className={styles.search} />
 
           <div className={styles.actions}>
+            <EnrollmentButton highlight className={styles.enrollCta} />
             <Button as="link" to={ROUTES.courses} variant="secondary">
               Ver todos os cursos
             </Button>
@@ -48,8 +50,10 @@ export function HeroSection() {
 
       <div className={styles.strip}>
         <p>
-          Processo seletivo aberto —{' '}
-          <Link to={ROUTES.courses}>Confira os cursos disponíveis</Link>
+          <strong>Inscrições abertas</strong> — faça sua inscrição em{' '}
+          <a {...enrollmentLinkProps} className={styles.stripLink}>
+            vestibular2.femaf.com.br
+          </a>
         </p>
       </div>
     </section>

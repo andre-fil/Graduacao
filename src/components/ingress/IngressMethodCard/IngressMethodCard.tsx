@@ -46,7 +46,7 @@ export function IngressMethodCard({ method, enrollmentUrl, index }: IngressMetho
         rel="noopener noreferrer"
         className={styles.cta}
       >
-        Iniciar ingresso
+        Iniciar inscrição no vestibular
         <ArrowRightIcon className={styles.ctaIcon} />
       </Button>
     </article>

@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { ROUTES } from '../../../app/routes';
+import { enrollmentLinkProps } from '../../../constants/enrollment';
 import { logoAlt, logoSrc } from '../../../utils/logo';
 import styles from './Header.module.css';
 
@@ -34,9 +35,12 @@ export function Header() {
           </ul>
         </nav>
 
-        <NavLink to={ROUTES.courses} className={styles.ingressLink}>
-          Fazer ingresso
-        </NavLink>
+        <a
+          {...enrollmentLinkProps}
+          className={styles.ingressLink}
+        >
+          Inscreva-se agora
+        </a>
       </div>
     </header>
   );

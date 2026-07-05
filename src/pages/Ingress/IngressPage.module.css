@@ -38,6 +38,8 @@
 .heroCta {
   background: #fff !important;
   color: var(--color-primary-dark) !important;
+  font-size: 1rem;
+  padding: var(--spacing-md) var(--spacing-xl) !important;
 }
 
 .heroCta:hover {

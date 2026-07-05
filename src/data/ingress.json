@@ -1,6 +1,6 @@
 {
-  "generalInfo": "Escolha a forma de ingresso que melhor se encaixa no seu perfil. Todas as modalidades utilizam o mesmo processo de inscrição online na FEMAF.",
-  "enrollmentUrl": "https://www.femaf.com.br/ingresso",
+  "generalInfo": "Escolha a forma de ingresso que melhor se encaixa no seu perfil. Todas as modalidades utilizam a mesma inscrição online em vestibular2.femaf.com.br.",
+  "enrollmentUrl": "https://vestibular2.femaf.com.br",
   "methods": [
     {
       "id": "vestibular",

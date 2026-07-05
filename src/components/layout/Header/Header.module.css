@@ -72,23 +72,32 @@
 }
 
 .ingressLink {
-  display: none;
+  display: inline-flex;
+  align-items: center;
   background: var(--color-primary);
   color: #fff !important;
-  font-weight: 600;
-  padding: var(--spacing-sm) var(--spacing-lg);
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--radius-sm);
   text-decoration: none;
-  transition: background-color var(--transition-fast);
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0, 128, 216, 0.45);
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .ingressLink:hover {
   background: var(--color-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 128, 216, 0.55);
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .ingressLink {
-    display: inline-flex;
-    align-items: center;
+    font-size: 0.9375rem;
+    padding: var(--spacing-sm) var(--spacing-lg);
   }
 }

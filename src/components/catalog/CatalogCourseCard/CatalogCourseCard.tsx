@@ -10,6 +10,7 @@ import {
 } from '../../../utils/coursePrice';
 import { formatCurrency } from '../../../utils/formatCurrency';
 import { Button } from '../../ui/Button';
+import { EnrollmentButton } from '../../ui/EnrollmentButton';
 import styles from './CatalogCourseCard.module.css';
 
 interface CatalogCourseCardProps {
@@ -70,9 +71,14 @@ export function CatalogCourseCard({ course, modalityId }: CatalogCourseCardProps
 
         <p className={styles.summary}>{course.summary}</p>
 
-        <Button as="link" to={ROUTES.courseDetail(course.slug)} className={styles.cta}>
-          Saiba mais
-        </Button>
+        <div className={styles.actions}>
+          <EnrollmentButton className={styles.enrollCta}>
+            Inscreva-se
+          </EnrollmentButton>
+          <Button as="link" to={ROUTES.courseDetail(course.slug)} variant="outline" className={styles.cta}>
+            Saiba mais
+          </Button>
+        </div>
       </div>
     </article>
   );

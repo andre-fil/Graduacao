@@ -33,6 +33,19 @@
   gap: var(--spacing-md);
 }
 
+.enrollBtn {
+  min-width: 220px;
+}
+
+.catalogBtn {
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  color: var(--color-text-inverse) !important;
+}
+
+.catalogBtn:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
 .whatsappBtn {
   border-color: rgba(255, 255, 255, 0.6) !important;
   color: var(--color-text-inverse) !important;

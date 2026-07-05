@@ -1,10 +1,8 @@
 import { useMemo, useState } from 'react';
-import { ROUTES } from '../../../app/routes';
 import type { Course } from '../../../types';
 import { useContact } from '../../../hooks/useContact';
 import { getModalityById } from '../../../services';
 import {
-  buildCourseInterestUrl,
   buildCourseWhatsAppUrl,
 } from '../../../utils/buildCourseWhatsApp';
 import {
@@ -13,6 +11,7 @@ import {
 } from '../../../utils/coursePrice';
 import { formatCurrency } from '../../../utils/formatCurrency';
 import { Button } from '../../ui/Button';
+import { EnrollmentButton } from '../../ui/EnrollmentButton';
 import styles from './CourseStickyCard.module.css';
 
 interface CourseStickyCardProps {
@@ -33,7 +32,6 @@ export function CourseStickyCard({ course }: CourseStickyCardProps) {
   const displayPrice = withPunctuality && hasPunctualityDiscount ? punctualityDiscount : original;
   const savings = original - punctualityDiscount;
 
-  const interestUrl = buildCourseInterestUrl(whatsapp.phone, course.name);
   const whatsappUrl = buildCourseWhatsAppUrl(whatsapp.phone, course.name);
 
   return (
@@ -115,14 +113,11 @@ export function CourseStickyCard({ course }: CourseStickyCardProps) {
       )}
 
       <div className={styles.actions}>
-        <Button as="a" href={interestUrl} className={styles.action}>
-          Tenho interesse
-        </Button>
+        <EnrollmentButton highlight className={styles.action}>
+          Inscreva-se no vestibular
+        </EnrollmentButton>
         <Button as="a" href={whatsappUrl} variant="outline" className={styles.whatsapp}>
-          Falar no WhatsApp
-        </Button>
-        <Button as="link" to={ROUTES.ingress(course.slug)} variant="secondary" className={styles.action}>
-          Escolher forma de ingresso
+          Tirar dúvidas no WhatsApp
         </Button>
       </div>
     </aside>

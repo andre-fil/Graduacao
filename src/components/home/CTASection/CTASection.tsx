@@ -1,6 +1,7 @@
 import { ROUTES } from '../../../app/routes';
 import { buildWhatsAppUrl, useContact } from '../../../hooks/useContact';
 import { Button } from '../../ui/Button';
+import { EnrollmentButton } from '../../ui/EnrollmentButton';
 import styles from './CTASection.module.css';
 
 export function CTASection() {
@@ -15,13 +16,16 @@ export function CTASection() {
             Pronto para transformar seu futuro?
           </h2>
           <p className={styles.description}>
-            Explore o catálogo completo, escolha seu curso e inicie o processo
-            de ingresso. Nossa equipe está pronta para ajudar você.
+            Escolha seu curso e garanta sua vaga no processo seletivo. A inscrição é
+            rápida, online e gratuita em vestibular2.femaf.com.br.
           </p>
         </div>
 
         <div className={styles.actions}>
-          <Button as="link" to={ROUTES.courses} variant="secondary">
+          <EnrollmentButton highlight variant="secondary" className={styles.enrollBtn}>
+            Inscreva-se agora — é grátis
+          </EnrollmentButton>
+          <Button as="link" to={ROUTES.courses} variant="outline" className={styles.catalogBtn}>
             Explorar cursos
           </Button>
           <Button as="a" href={whatsappUrl} variant="outline" className={styles.whatsappBtn}>

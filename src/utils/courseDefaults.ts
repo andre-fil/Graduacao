@@ -16,5 +16,5 @@ export function createDefaultBanners(): CourseBanner[] {
 }
 
 export function createDefaultIngress(): CourseIngress {
-  return { ...DEFAULT_INGRESS, notes: { ...DEFAULT_INGRESS.notes } };
+  return { ...DEFAULT_INGRESS };
 }

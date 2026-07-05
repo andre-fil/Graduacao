@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../../app/routes';
+import { enrollmentLinkProps } from '../../../constants/enrollment';
 import type { Course } from '../../../types';
 import { getAreaById, getModalityById } from '../../../services';
 import styles from './CourseCard.module.css';
@@ -44,9 +45,9 @@ export function CourseCard({ course, variant = 'default' }: CourseCardProps) {
         <Link to={ROUTES.courseDetail(course.slug)} className={styles.detailLink}>
           Ver detalhes
         </Link>
-        <Link to={ROUTES.ingress(course.slug)} className={styles.ingressLink}>
-          Ingressar
-        </Link>
+        <a {...enrollmentLinkProps} className={styles.ingressLink}>
+          Inscreva-se
+        </a>
       </footer>
     </article>
   );

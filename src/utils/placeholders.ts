@@ -6,8 +6,6 @@ export const LOREM_PARAGRAPH =
 
 export const LOREM_MEC = 'Cursos reconhecidos pelo MEC';
 
-export const LOREM_EMEC = '00000';
-
 export const SCHEDULE_MATUTINO = 'De acordo com planejamento do curso';
 export const SCHEDULE_NOTURNO = '18:30 às 22:00';
 export const SCHEDULE_EAD = 'Horários flexíveis na plataforma EAD';
@@ -25,7 +23,7 @@ export const LOREM_FAQ = [
   {
     question: 'Quais as formas de ingresso?',
     answer:
-      'A FEMAF oferece Vestibular, ENEM, Transferência e Segunda Graduação. Cada forma de ingresso possui requisitos, documentação e prazos específicos. Na página do curso, acesse "Escolher forma de ingresso" ou fale com nossa equipe pelo WhatsApp para receber orientação personalizada.',
+      'A FEMAF oferece Vestibular, ENEM, Transferência e Segunda Graduação. A inscrição é feita online em vestibular2.femaf.com.br. Em caso de dúvidas, fale com nossa equipe pelo WhatsApp.',
   },
   {
     question: 'Como funciona o desconto de mensalidade?',
@@ -47,6 +45,5 @@ export const DEFAULT_INGRESS = {
   prouni: false,
   fies: false,
   reabertura: false,
-  enrollmentUrl: '',
-  notes: {} as Record<string, string>,
+  enrollmentUrl: 'https://vestibular2.femaf.com.br',
 };

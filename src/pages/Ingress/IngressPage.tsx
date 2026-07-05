@@ -4,6 +4,7 @@ import { ROUTES } from '../../app/routes';
 import { IngressMethodCard } from '../../components/ingress/IngressMethodCard';
 import { Container } from '../../components/layout/Container';
 import { Breadcrumb } from '../../components/ui/Breadcrumb';
+import { EnrollmentButton } from '../../components/ui/EnrollmentButton';
 import { Button } from '../../components/ui/Button';
 import { ChevronLeftIcon } from '../../components/ui/icons';
 import { useCourse } from '../../hooks/useCourses';
@@ -38,15 +39,9 @@ export function IngressPage() {
         <p className={styles.heroLabel}>Processo seletivo</p>
         <h1 className={styles.heroTitle}>Formas de ingresso — {course.name}</h1>
         <p className={styles.heroDescription}>{generalInfo}</p>
-        <Button
-          as="a"
-          href={enrollmentUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.heroCta}
-        >
-          Acessar inscrição online
-        </Button>
+        <EnrollmentButton highlight className={styles.heroCta}>
+          Inscreva-se agora em vestibular2.femaf.com.br
+        </EnrollmentButton>
       </header>
 
       <div className={styles.methods}>
