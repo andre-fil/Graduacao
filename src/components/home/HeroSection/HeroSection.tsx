@@ -14,47 +14,59 @@ export function HeroSection() {
       <div className={styles.pattern} aria-hidden="true" />
       <div className={styles.inner}>
         <div className={styles.content}>
-          <span className={styles.badge}>Graduação FEMAF</span>
+          <span className={styles.badge}>Vestibular — inscrições abertas</span>
           <h1 id="hero-heading" className={styles.title}>
-            Sua graduação começa com a escolha certa
+            Sua vaga na graduação FEMAF começa aqui
           </h1>
           <p className={styles.description}>
-            Encontre o curso ideal, conheça as modalidades de ensino e dê o
+            Inscreva-se no vestibular, explore os cursos disponíveis e dê o
             primeiro passo rumo à sua carreira profissional.
           </p>
 
           <CourseSearch size="large" className={styles.search} />
 
           <div className={styles.actions}>
-            <EnrollmentButton highlight className={styles.enrollCta} />
+            <EnrollmentButton highlight className={styles.enrollCta}>
+              Inscreva-se no vestibular
+            </EnrollmentButton>
             <Button as="link" to={ROUTES.courses} variant="secondary">
               Ver todos os cursos
             </Button>
           </div>
         </div>
 
-        <aside className={styles.stats} aria-label="Números da instituição">
-          <div className={styles.statCard}>
-            <strong>{courses.length}</strong>
-            <span>Cursos de graduação</span>
-          </div>
-          <div className={styles.statCard}>
-            <strong>2</strong>
-            <span>Modalidades de ensino</span>
-          </div>
-          <div className={styles.statCard}>
-            <span className={styles.statText}>Cursos reconhecidos pelo MEC</span>
-          </div>
-        </aside>
+        <a
+          {...enrollmentLinkProps}
+          className={styles.vestibularCard}
+          aria-label="Acessar inscrição do vestibular em vestibular2.femaf.com.br"
+        >
+          <span className={styles.vestibularEyebrow}>Processo seletivo 2026</span>
+          <strong className={styles.vestibularTitle}>Vestibular FEMAF</strong>
+          <p className={styles.vestibularText}>
+            Inscrição online, gratuita e rápida para o 1º semestre de 2026.
+          </p>
+          <span className={styles.vestibularLink}>vestibular2.femaf.com.br →</span>
+          <ul className={styles.vestibularMeta}>
+            <li>
+              <strong>{courses.length}</strong> cursos
+            </li>
+            <li>
+              <strong>2</strong> modalidades
+            </li>
+            <li>MEC</li>
+          </ul>
+        </a>
       </div>
 
       <div className={styles.strip}>
-        <p>
-          <strong>Inscrições abertas</strong> — faça sua inscrição em{' '}
-          <a {...enrollmentLinkProps} className={styles.stripLink}>
-            vestibular2.femaf.com.br
-          </a>
-        </p>
+        <div className={styles.stripInner}>
+          <p className={styles.stripText}>
+            <strong>Inscrições abertas</strong> — garanta sua vaga no vestibular 2026
+          </p>
+          <EnrollmentButton highlight variant="secondary" className={styles.stripCta}>
+            Fazer inscrição agora
+          </EnrollmentButton>
+        </div>
       </div>
     </section>
   );
