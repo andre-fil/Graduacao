@@ -1,4 +1,4 @@
-export type { Course, CourseCurriculumSemester, CoursePrice, CourseBanner, CourseSchedule, CourseFaqItem, CourseIngress } from './course';
+export type { Course, CoursePrice, CourseBanner, CourseSchedule, CourseFaqItem, CourseIngress } from './course';
 export type { Area } from './area';
 export type { Modality } from './modality';
 export type { IngressMethod, IngressConfig } from './ingress';

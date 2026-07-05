@@ -17,7 +17,6 @@ export function CourseInfoGrid({ course }: CourseInfoGridProps) {
     { label: 'Área do conhecimento', value: area?.name ?? '—' },
     { label: 'Modalidade', value: modalities || '—' },
     { label: 'Duração', value: course.duration },
-    { label: 'Carga horária', value: course.workload },
     { label: 'Turnos', value: course.shift.map(formatShift).join(', ') },
     {
       label: 'Horários das aulas',

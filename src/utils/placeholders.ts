@@ -21,27 +21,6 @@ export const DEFAULT_BANNER_PATH = 'course-cover';
 
 export const DEFAULT_BANNER_ALT = 'Banner promocional FEMAF — Graduação';
 
-export const LOREM_CURRICULUM = [
-  {
-    semester: 1,
-    disciplines: [
-      'Lorem ipsum dolor',
-      'Consectetur adipiscing',
-      'Vestibulum ante ipsum',
-      'Praesent commodo cursus',
-    ],
-  },
-  {
-    semester: 2,
-    disciplines: [
-      'Magna fringilla urna',
-      'Mollis pretium nisl',
-      'Donec sed odio dui',
-      'Aenean lacinia bibendum',
-    ],
-  },
-];
-
 export const LOREM_FAQ = [
   {
     question: 'Quais as formas de ingresso?',

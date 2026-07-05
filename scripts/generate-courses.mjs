@@ -19,11 +19,6 @@ function eadPrice(punctualityDiscount, punctualityPercent) {
   return { original, punctualityDiscount, punctualityPercent };
 }
 
-const CURRICULUM = [
-  { semester: 1, disciplines: ['Lorem ipsum dolor', 'Consectetur adipiscing', 'Vestibulum ante ipsum', 'Praesent commodo'] },
-  { semester: 2, disciplines: ['Magna fringilla urna', 'Mollis pretium nisl', 'Donec sed odio dui', 'Aenean lacinia bibendum'] },
-];
-
 const FAQ = [
   {
     question: 'Quais as formas de ingresso?',
@@ -70,7 +65,6 @@ function buildCourse(c) {
     featured: c.featured,
     tags: c.tags,
     duration: c.duration,
-    workload: c.workload,
     shift: c.shift,
     schedules: c.schedules,
     mecRecognition: LOREM_MEC,
@@ -88,7 +82,6 @@ function buildCourse(c) {
     jobMarket: c.jobMarket,
     careerPaths: c.careerPaths,
     ingress: INGRESS,
-    curriculum: CURRICULUM,
     faq: FAQ,
     banners: BANNER,
   };
@@ -104,7 +97,6 @@ const courses = [
     featured: true,
     tags: ['direito', 'jurídico', 'advocacia', 'presencial'],
     duration: '5 anos',
-    workload: '3.600 horas',
     shift: ['noturno'],
     schedules: [{ shift: 'noturno', time: SCHEDULE_NOTURNO }],
     price: presencialPrice(1382.0, 10, 1243.8),
@@ -127,7 +119,6 @@ const courses = [
     featured: true,
     tags: ['pedagogia', 'educação', 'licenciatura', 'ead'],
     duration: '4 anos',
-    workload: '3.200 horas',
     shift: ['ead'],
     schedules: [{ shift: 'ead', time: SCHEDULE_EAD }],
     price: eadPrice(159.9, 30.78),
@@ -150,7 +141,6 @@ const courses = [
     featured: false,
     tags: ['serviço social', 'assistência social', 'políticas públicas', 'ead'],
     duration: '4 anos',
-    workload: '3.200 horas',
     shift: ['ead'],
     schedules: [{ shift: 'ead', time: SCHEDULE_EAD }],
     price: eadPrice(179.9, 28.04),
@@ -173,7 +163,6 @@ const courses = [
     featured: false,
     tags: ['contabilidade', 'finanças', 'ead'],
     duration: '4 anos',
-    workload: '3.200 horas',
     shift: ['ead'],
     schedules: [{ shift: 'ead', time: SCHEDULE_EAD }],
     price: eadPrice(179.9, 28.04),
@@ -196,7 +185,6 @@ const courses = [
     featured: false,
     tags: ['agronegócio', 'tecnólogo', 'gestão rural', 'ead'],
     duration: '3 anos',
-    workload: '1.600 horas',
     shift: ['ead'],
     schedules: [{ shift: 'ead', time: SCHEDULE_EAD }],
     price: eadPrice(189.9, 38.75),
@@ -219,7 +207,6 @@ const courses = [
     featured: true,
     tags: ['administração', 'gestão', 'negócios', 'ead'],
     duration: '4 anos',
-    workload: '3.200 horas',
     shift: ['ead'],
     schedules: [{ shift: 'ead', time: SCHEDULE_EAD }],
     price: eadPrice(179.9, 28.04),

@@ -24,11 +24,6 @@ export interface CourseFaqItem {
   answer: string;
 }
 
-export interface CourseCurriculumSemester {
-  semester: number;
-  disciplines: string[];
-}
-
 export interface CourseIngress {
   vestibular: boolean;
   enem: boolean;
@@ -51,7 +46,6 @@ export interface Course {
   featured: boolean;
   tags: string[];
   duration: string;
-  workload: string;
   shift: string[];
   schedules: CourseSchedule[];
   mecRecognition: string;
@@ -67,7 +61,6 @@ export interface Course {
   jobMarket: string;
   careerPaths: string[];
   ingress: CourseIngress;
-  curriculum: CourseCurriculumSemester[];
   faq: CourseFaqItem[];
   banners: CourseBanner[];
 }

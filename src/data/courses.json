@@ -16,7 +16,6 @@
       "presencial"
     ],
     "duration": "5 anos",
-    "workload": "3.600 horas",
     "shift": [
       "noturno"
     ],
@@ -65,26 +64,6 @@
         "geral": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       }
     },
-    "curriculum": [
-      {
-        "semester": 1,
-        "disciplines": [
-          "Lorem ipsum dolor",
-          "Consectetur adipiscing",
-          "Vestibulum ante ipsum",
-          "Praesent commodo"
-        ]
-      },
-      {
-        "semester": 2,
-        "disciplines": [
-          "Magna fringilla urna",
-          "Mollis pretium nisl",
-          "Donec sed odio dui",
-          "Aenean lacinia bibendum"
-        ]
-      }
-    ],
     "faq": [
       {
         "question": "Quais as formas de ingresso?",
@@ -124,7 +103,6 @@
       "ead"
     ],
     "duration": "4 anos",
-    "workload": "3.200 horas",
     "shift": [
       "ead"
     ],
@@ -173,26 +151,6 @@
         "geral": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       }
     },
-    "curriculum": [
-      {
-        "semester": 1,
-        "disciplines": [
-          "Lorem ipsum dolor",
-          "Consectetur adipiscing",
-          "Vestibulum ante ipsum",
-          "Praesent commodo"
-        ]
-      },
-      {
-        "semester": 2,
-        "disciplines": [
-          "Magna fringilla urna",
-          "Mollis pretium nisl",
-          "Donec sed odio dui",
-          "Aenean lacinia bibendum"
-        ]
-      }
-    ],
     "faq": [
       {
         "question": "Quais as formas de ingresso?",
@@ -232,7 +190,6 @@
       "ead"
     ],
     "duration": "4 anos",
-    "workload": "3.200 horas",
     "shift": [
       "ead"
     ],
@@ -281,26 +238,6 @@
         "geral": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       }
     },
-    "curriculum": [
-      {
-        "semester": 1,
-        "disciplines": [
-          "Lorem ipsum dolor",
-          "Consectetur adipiscing",
-          "Vestibulum ante ipsum",
-          "Praesent commodo"
-        ]
-      },
-      {
-        "semester": 2,
-        "disciplines": [
-          "Magna fringilla urna",
-          "Mollis pretium nisl",
-          "Donec sed odio dui",
-          "Aenean lacinia bibendum"
-        ]
-      }
-    ],
     "faq": [
       {
         "question": "Quais as formas de ingresso?",
@@ -339,7 +276,6 @@
       "ead"
     ],
     "duration": "4 anos",
-    "workload": "3.200 horas",
     "shift": [
       "ead"
     ],
@@ -388,26 +324,6 @@
         "geral": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       }
     },
-    "curriculum": [
-      {
-        "semester": 1,
-        "disciplines": [
-          "Lorem ipsum dolor",
-          "Consectetur adipiscing",
-          "Vestibulum ante ipsum",
-          "Praesent commodo"
-        ]
-      },
-      {
-        "semester": 2,
-        "disciplines": [
-          "Magna fringilla urna",
-          "Mollis pretium nisl",
-          "Donec sed odio dui",
-          "Aenean lacinia bibendum"
-        ]
-      }
-    ],
     "faq": [
       {
         "question": "Quais as formas de ingresso?",
@@ -447,7 +363,6 @@
       "ead"
     ],
     "duration": "3 anos",
-    "workload": "1.600 horas",
     "shift": [
       "ead"
     ],
@@ -496,26 +411,6 @@
         "geral": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       }
     },
-    "curriculum": [
-      {
-        "semester": 1,
-        "disciplines": [
-          "Lorem ipsum dolor",
-          "Consectetur adipiscing",
-          "Vestibulum ante ipsum",
-          "Praesent commodo"
-        ]
-      },
-      {
-        "semester": 2,
-        "disciplines": [
-          "Magna fringilla urna",
-          "Mollis pretium nisl",
-          "Donec sed odio dui",
-          "Aenean lacinia bibendum"
-        ]
-      }
-    ],
     "faq": [
       {
         "question": "Quais as formas de ingresso?",
@@ -555,7 +450,6 @@
       "ead"
     ],
     "duration": "4 anos",
-    "workload": "3.200 horas",
     "shift": [
       "ead"
     ],
@@ -604,26 +498,6 @@
         "geral": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       }
     },
-    "curriculum": [
-      {
-        "semester": 1,
-        "disciplines": [
-          "Lorem ipsum dolor",
-          "Consectetur adipiscing",
-          "Vestibulum ante ipsum",
-          "Praesent commodo"
-        ]
-      },
-      {
-        "semester": 2,
-        "disciplines": [
-          "Magna fringilla urna",
-          "Mollis pretium nisl",
-          "Donec sed odio dui",
-          "Aenean lacinia bibendum"
-        ]
-      }
-    ],
     "faq": [
       {
         "question": "Quais as formas de ingresso?",

@@ -2,7 +2,6 @@ import { Navigate, useParams } from 'react-router-dom';
 import { NotFoundPage } from '../NotFound/NotFoundPage';
 import { ROUTES } from '../../app/routes';
 import { CourseBanners } from '../../components/course/CourseBanners';
-import { CourseCurriculum } from '../../components/course/CourseCurriculum';
 import { CourseHero } from '../../components/course/CourseHero';
 import { CourseInfoGrid } from '../../components/course/CourseInfoGrid';
 import { CourseSection } from '../../components/course/CourseSection';
@@ -69,10 +68,6 @@ export function CourseDetailPage() {
                   <li key={path}>{path}</li>
                 ))}
               </ul>
-            </CourseSection>
-
-            <CourseSection id="curriculum" title="Matriz curricular">
-              <CourseCurriculum curriculum={course.curriculum} />
             </CourseSection>
 
             <CourseSection id="faq" title="Perguntas frequentes">
