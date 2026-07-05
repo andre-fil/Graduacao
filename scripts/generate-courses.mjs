@@ -67,6 +67,7 @@ function buildCourse(c) {
     shift: c.shift,
     schedules: c.schedules,
     mecRecognition: LOREM_MEC,
+    emecProcess: c.mecPortaria,
     image: IMG,
     price: {
       original: c.price.original,
@@ -97,6 +98,7 @@ const courses = [
     duration: '5 anos',
     shift: ['noturno'],
     schedules: [{ shift: 'noturno', time: SCHEDULE_NOTURNO }],
+    mecPortaria: 'Portaria MEC nº 119 de 22/04/2020',
     price: presencialPrice(1382.0, 10, 1243.8),
     summary: 'Construa uma carreira sólida no universo jurídico com formação crítica, ética e atualizada.',
     description:
@@ -119,6 +121,7 @@ const courses = [
     duration: '4 anos',
     shift: ['ead'],
     schedules: [{ shift: 'ead', time: SCHEDULE_EAD }],
+    mecPortaria: 'Portaria MEC nº 1013 de 15/09/2021',
     price: eadPrice(159.9, 30.78),
     summary: 'Transforme vidas pela educação com formação humanista, prática e compromisso social.',
     description:
@@ -141,6 +144,7 @@ const courses = [
     duration: '4 anos',
     shift: ['ead'],
     schedules: [{ shift: 'ead', time: SCHEDULE_EAD }],
+    mecPortaria: 'Portaria MEC nº 567 de 16/12/2019',
     price: eadPrice(179.9, 28.04),
     summary: 'Promova justiça social e defesa de direitos com formação crítica e comprometida.',
     description:
@@ -163,6 +167,7 @@ const courses = [
     duration: '4 anos',
     shift: ['ead'],
     schedules: [{ shift: 'ead', time: SCHEDULE_EAD }],
+    mecPortaria: 'Portaria MEC nº 567 de 18/12/2019',
     price: eadPrice(179.9, 28.04),
     summary: 'Domine contabilidade, finanças e auditoria com formação alinhada às exigências do mercado.',
     description:
@@ -185,6 +190,7 @@ const courses = [
     duration: '3 anos',
     shift: ['ead'],
     schedules: [{ shift: 'ead', time: SCHEDULE_EAD }],
+    mecPortaria: 'Portaria MEC nº 451 de 05/02/2022',
     price: eadPrice(189.9, 38.75),
     summary: 'Gerencie propriedades rurais e negócios do agronegócio com visão empreendedora e sustentável.',
     description:
@@ -207,6 +213,7 @@ const courses = [
     duration: '4 anos',
     shift: ['ead'],
     schedules: [{ shift: 'ead', time: SCHEDULE_EAD }],
+    mecPortaria: 'Portaria MEC nº 567 de 18/12/2019',
     price: eadPrice(179.9, 28.04),
     summary: 'Forme-se para liderar equipes e gerenciar negócios com visão estratégica e empreendedora.',
     description:

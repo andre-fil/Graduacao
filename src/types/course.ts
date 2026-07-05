@@ -48,6 +48,7 @@ export interface Course {
   shift: string[];
   schedules: CourseSchedule[];
   mecRecognition: string;
+  emecProcess: string;
   image: string;
   price: CoursePrice;
   /** Preços por modalidade quando o curso é ofertado em mais de uma (ex.: presencial e EAD) */

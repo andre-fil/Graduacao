@@ -23,6 +23,7 @@ export function CourseInfoGrid({ course }: CourseInfoGridProps) {
       value: course.schedules.map((s) => `${formatShift(s.shift)}: ${s.time}`).join(' · '),
     },
     { label: 'Reconhecimento MEC', value: course.mecRecognition },
+    { label: 'Portaria MEC', value: course.emecProcess },
   ];
 
   return (
