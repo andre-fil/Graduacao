@@ -4,8 +4,6 @@
 
 .title {
   margin-bottom: var(--spacing-sm);
-  font-weight: 600;
-  color: var(--color-primary-dark);
 }
 
 .description {

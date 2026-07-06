@@ -30,7 +30,7 @@ export function CatalogPage() {
 
       <PageHeader
         title="Catálogo de Cursos"
-        description="Cursos ofertados neste vestibular. Use a busca e os filtros para refinar."
+        description="Encontre a graduação ideal neste vestibular. Pesquise por nome e refine os resultados com os filtros abaixo."
       />
 
       <div className={styles.search}>

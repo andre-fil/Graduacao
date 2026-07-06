@@ -12,7 +12,8 @@
 }
 
 .card:hover {
-  border-color: rgba(0, 128, 216, 0.35);
+  border-color: rgba(0, 128, 216, 0.45);
+  box-shadow: var(--shadow-md);
 }
 
 .imageWrapper {
@@ -43,14 +44,13 @@
 
 .modalityBadge {
   font-size: 0.6875rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: var(--color-text-muted);
-  background: var(--color-surface);
-  padding: 0.2rem 0.45rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
+  letter-spacing: 0.04em;
+  color: var(--color-primary-dark);
+  background: var(--color-primary-light);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-full);
 }
 
 .title {

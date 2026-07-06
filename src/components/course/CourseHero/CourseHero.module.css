@@ -1,9 +1,8 @@
 .hero {
   position: relative;
   margin: 0 calc(-1 * var(--spacing-md)) var(--spacing-xl);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--color-border);
 }
 
 .imageWrapper {
@@ -23,8 +22,8 @@
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(25, 18, 102, 0.88) 0%,
-    rgba(25, 18, 102, 0.35) 55%,
+    rgba(25, 18, 102, 0.92) 0%,
+    rgba(25, 18, 102, 0.4) 50%,
     transparent 100%
   );
 }
@@ -41,29 +40,29 @@
 .degree {
   margin: 0 0 var(--spacing-xs);
   font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-weight: 600;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.06em;
+  color: #b3dbff;
 }
 
 .title {
   margin: 0 0 var(--spacing-sm);
-  font-size: clamp(1.625rem, 4vw, 2.25rem);
-  font-weight: 600;
-  line-height: 1.2;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
 }
 
 .summary {
   margin: 0 0 var(--spacing-md);
-  max-width: 56ch;
+  max-width: 60ch;
   font-size: 1rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .enrollCta {
-  max-width: 240px;
+  max-width: 280px;
 }
 
 @media (max-width: 640px) {
@@ -71,8 +70,6 @@
     margin-left: 0;
     margin-right: 0;
     border-radius: 0;
-    border-left: none;
-    border-right: none;
   }
 
   .imageWrapper {

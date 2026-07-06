@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../../app/routes';
 import type { Modality } from '../../../types';
-import { CampusIcon, LaptopIcon } from '../../ui/icons';
+import { ArrowRightIcon, CampusIcon, LaptopIcon } from '../../ui/icons';
 import styles from './ModalityCard.module.css';
 
 const modalityIcons: Record<string, typeof CampusIcon> = {
@@ -28,7 +28,9 @@ export function ModalityCard({ modality }: ModalityCardProps) {
         <h3 className={styles.title}>{modality.name}</h3>
         <p className={styles.highlight}>{modality.highlight}</p>
         <p className={styles.description}>{modality.description}</p>
-        <span className={styles.link}>Ver cursos</span>
+        <span className={styles.link}>
+          Ver cursos <ArrowRightIcon />
+        </span>
       </div>
     </Link>
   );

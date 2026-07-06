@@ -16,7 +16,7 @@ export function FeaturedCourses() {
         <SectionHeader
           titleId="featured-heading"
           title="Cursos em destaque"
-          description="Algumas das graduações disponíveis neste vestibular."
+          description="Conheça algumas das graduações mais procuradas e encontre a formação que combina com você."
         >
           <Button as="link" to={ROUTES.courses} variant="outline">
             Ver catálogo completo
@@ -30,7 +30,7 @@ export function FeaturedCourses() {
         </CourseGrid>
 
         <p className={styles.mobileLink}>
-          <Link to={ROUTES.courses}>Ver todos os cursos</Link>
+          <Link to={ROUTES.courses}>Ver todos os cursos →</Link>
         </p>
       </div>
     </section>

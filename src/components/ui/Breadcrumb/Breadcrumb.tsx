@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ChevronLeftIcon, ChevronRightIcon } from '../icons';
 import styles from './Breadcrumb.module.css';
 
 export interface BreadcrumbItem {
@@ -21,7 +22,8 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
             <li key={`${item.label}-${index}`} className={styles.item}>
               {item.to && !isLast ? (
                 <Link to={item.to} className={styles.link}>
-                  {item.label}
+                  <ChevronLeftIcon className={styles.linkIcon} />
+                  <span>{item.label}</span>
                 </Link>
               ) : (
                 <span className={isLast ? styles.current : styles.static} aria-current={isLast ? 'page' : undefined}>
@@ -29,7 +31,9 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
                 </span>
               )}
 
-              {!isLast && <span className={styles.separator} aria-hidden="true">/</span>}
+              {!isLast && (
+                <ChevronRightIcon className={styles.separator} aria-hidden="true" />
+              )}
             </li>
           );
         })}

@@ -13,16 +13,17 @@ export function VestibularPromo() {
     <section className={styles.section} aria-labelledby="vestibular-heading">
       <div className={styles.inner}>
         <div className={styles.content}>
-          <p className={styles.eyebrow}>Processo seletivo</p>
+          <p className={styles.eyebrow}>Processo seletivo FEMAF</p>
           <h2 id="vestibular-heading" className={styles.title}>
-            Inscrição no vestibular
+            Vestibular 2026 — garanta sua vaga na graduação
           </h2>
           <p className={styles.description}>
-            A inscrição é feita em{' '}
+            As inscrições estão abertas em{' '}
             <a {...enrollmentLinkProps} className={styles.siteLink}>
               vestibular2.femaf.com.br
             </a>
-            . O mesmo endereço vale para todas as formas de ingresso.
+            . Escolha seu curso, faça a inscrição em poucos minutos e comece sua
+            trajetória na FEMAF.
           </p>
 
           <ul className={styles.list}>
@@ -34,10 +35,10 @@ export function VestibularPromo() {
 
         <aside className={styles.ctaPanel}>
           <p className={styles.ctaLabel}>Inscrições abertas</p>
-          <p className={styles.ctaTitle}>Acesse o sistema de inscrição</p>
-          <p className={styles.ctaHint}>Vestibular, ENEM, transferência e segunda graduação</p>
-          <EnrollmentButton className={styles.ctaButton}>
-            Ir para vestibular2.femaf.com.br
+          <p className={styles.ctaTitle}>Faça sua inscrição agora</p>
+          <p className={styles.ctaHint}>Acesso direto ao sistema de inscrição do vestibular</p>
+          <EnrollmentButton highlight className={styles.ctaButton}>
+            Acessar vestibular2.femaf.com.br
           </EnrollmentButton>
         </aside>
       </div>

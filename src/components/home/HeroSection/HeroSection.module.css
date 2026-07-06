@@ -2,6 +2,16 @@
   position: relative;
   background-color: var(--color-primary-dark);
   color: var(--color-text-inverse);
+  overflow: hidden;
+}
+
+.pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 85% 20%, rgba(0, 128, 216, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 10% 80%, rgba(0, 128, 216, 0.08) 0%, transparent 40%);
+  pointer-events: none;
 }
 
 .inner {
@@ -11,36 +21,40 @@
   padding: var(--spacing-3xl) var(--spacing-md) var(--spacing-2xl);
   display: grid;
   gap: var(--spacing-2xl);
-  align-items: start;
+  align-items: center;
 }
 
 .content {
-  max-width: 620px;
+  max-width: 640px;
 }
 
 .badge {
   display: inline-block;
-  color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 196, 0, 0.18);
+  color: #ffe08a;
   font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-lg);
+  border: 1px solid rgba(255, 196, 0, 0.35);
 }
 
 .title {
-  font-size: clamp(1.75rem, 4.5vw, 2.5rem);
-  font-weight: 600;
-  line-height: 1.2;
+  font-size: clamp(1.875rem, 5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
   margin-bottom: var(--spacing-md);
 }
 
 .description {
   font-size: 1.0625rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: var(--spacing-xl);
-  max-width: 48ch;
+  max-width: 52ch;
 }
 
 .search {
@@ -53,50 +67,62 @@
   gap: var(--spacing-sm);
 }
 
+.stats {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
 .vestibularCard {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
   padding: var(--spacing-xl);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   text-decoration: none;
   color: var(--color-text-inverse);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(
+    160deg,
+    rgba(0, 128, 216, 0.45) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
   transition:
-    border-color var(--transition-fast),
-    background-color var(--transition-fast);
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
 .vestibularCard:hover {
-  border-color: rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
 }
 
 .vestibularEyebrow {
   font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
+  color: #b3dbff;
 }
 
 .vestibularTitle {
-  font-size: 1.375rem;
-  font-weight: 600;
-  line-height: 1.25;
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.15;
 }
 
 .vestibularText {
   margin: 0;
   font-size: 0.9375rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .vestibularLink {
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: 0.9375rem;
+  font-weight: 700;
   color: #fff;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -105,29 +131,62 @@
 .vestibularMeta {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
   margin: var(--spacing-sm) 0 0;
   padding: var(--spacing-md) 0 0;
   list-style: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .vestibularMeta li {
   font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.75);
+  padding-right: var(--spacing-sm);
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.vestibularMeta li:last-child {
+  border-right: none;
 }
 
 .vestibularMeta strong {
   display: block;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.125rem;
   color: #fff;
 }
 
+.statCard {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.statCard strong {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--color-text-inverse);
+}
+
+.statCard span {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.statText {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-inverse);
+  line-height: 1.4;
+}
+
 .strip {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(0, 0, 0, 0.12);
-  padding: var(--spacing-md) var(--spacing-md);
+  position: relative;
+  background: var(--color-primary);
+  padding: var(--spacing-lg) var(--spacing-md);
 }
 
 .stripInner {
@@ -135,38 +194,47 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--spacing-md);
+  text-align: center;
 }
 
 .stripText {
   margin: 0;
-  font-size: 0.9375rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.88);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-inverse);
 }
 
 .stripCta {
-  min-width: auto;
+  min-width: 240px;
+}
+
+@media (min-width: 768px) {
+  .stripInner {
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+  }
 }
 
 .enrollCta {
   flex-shrink: 0;
 }
 
-@media (min-width: 768px) {
-  .stripInner {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-
 @media (min-width: 900px) {
   .inner {
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 1.2fr 0.8fr;
     padding-top: var(--spacing-3xl);
     padding-bottom: var(--spacing-3xl);
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .vestibularCard {
+    align-self: stretch;
   }
 }
 

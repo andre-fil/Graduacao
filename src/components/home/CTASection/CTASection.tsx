@@ -13,16 +13,17 @@ export function CTASection() {
       <div className={styles.inner}>
         <div className={styles.content}>
           <h2 id="cta-heading" className={styles.title}>
-            Próximo passo
+            Pronto para transformar seu futuro?
           </h2>
           <p className={styles.description}>
-            Escolha o curso e conclua a inscrição em vestibular2.femaf.com.br.
+            Escolha seu curso e garanta sua vaga no processo seletivo. A inscrição é
+            rápida, online e gratuita em vestibular2.femaf.com.br.
           </p>
         </div>
 
         <div className={styles.actions}>
-          <EnrollmentButton variant="secondary" className={styles.enrollBtn}>
-            Fazer inscrição
+          <EnrollmentButton highlight variant="secondary" className={styles.enrollBtn}>
+            Inscreva-se agora — é grátis
           </EnrollmentButton>
           <Button as="link" to={ROUTES.courses} variant="outline" className={styles.catalogBtn}>
             Explorar cursos

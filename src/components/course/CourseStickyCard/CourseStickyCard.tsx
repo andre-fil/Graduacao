@@ -113,8 +113,8 @@ export function CourseStickyCard({ course }: CourseStickyCardProps) {
       )}
 
       <div className={styles.actions}>
-        <EnrollmentButton className={styles.action}>
-          Fazer inscrição
+        <EnrollmentButton highlight className={styles.action}>
+          Inscreva-se no vestibular
         </EnrollmentButton>
         <Button as="a" href={whatsappUrl} variant="outline" className={styles.whatsapp}>
           Tirar dúvidas no WhatsApp
