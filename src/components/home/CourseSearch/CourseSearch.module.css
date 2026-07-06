@@ -18,9 +18,8 @@
   display: flex;
   align-items: center;
   background: var(--color-background);
-  border: 2px solid transparent;
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
   overflow: hidden;
   transition: border-color var(--transition-fast);
 }
@@ -66,18 +65,6 @@
 
 .large .input,
 .large .submit {
-  padding-top: var(--spacing-lg);
-  padding-bottom: var(--spacing-lg);
-}
-
-@media (max-width: 540px) {
-  .submit {
-    padding: var(--spacing-md);
-    font-size: 0;
-  }
-
-  .submit::after {
-    content: '→';
-    font-size: 1.125rem;
-  }
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
 }

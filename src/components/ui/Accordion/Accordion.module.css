@@ -1,14 +1,14 @@
 .accordion {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
-}
-
-.item {
+  gap: 0;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: var(--color-background);
+}
+
+.item + .item {
+  border-top: 1px solid var(--color-border);
 }
 
 .trigger {
@@ -22,8 +22,8 @@
   background: none;
   text-align: left;
   font: inherit;
-  font-weight: 600;
-  color: var(--color-primary-dark);
+  font-weight: 500;
+  color: var(--color-text);
   cursor: pointer;
 }
 
@@ -33,16 +33,10 @@
 
 .icon {
   flex-shrink: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-full);
-  background: var(--color-primary-light);
-  color: var(--color-primary);
-  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  font-size: 1.25rem;
   line-height: 1;
+  font-weight: 400;
 }
 
 .panel {

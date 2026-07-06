@@ -39,7 +39,7 @@ export function Header() {
           {...enrollmentLinkProps}
           className={styles.ingressLink}
         >
-          Inscreva-se agora
+          Inscrição
         </a>
       </div>
     </header>

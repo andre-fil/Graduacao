@@ -22,8 +22,8 @@ export function CourseHero({ course }: CourseHeroProps) {
         <p className={styles.degree}>{course.degree}</p>
         <h1 className={styles.title}>{course.name}</h1>
         <p className={styles.summary}>{course.summary}</p>
-        <EnrollmentButton highlight className={styles.enrollCta}>
-          Inscreva-se neste curso
+        <EnrollmentButton className={styles.enrollCta}>
+          Fazer inscrição
         </EnrollmentButton>
       </div>
     </section>

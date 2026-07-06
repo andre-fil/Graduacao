@@ -39,18 +39,17 @@ export function IngressPage() {
         <p className={styles.heroLabel}>Processo seletivo</p>
         <h1 className={styles.heroTitle}>Formas de ingresso — {course.name}</h1>
         <p className={styles.heroDescription}>{generalInfo}</p>
-        <EnrollmentButton highlight className={styles.heroCta}>
-          Inscreva-se agora em vestibular2.femaf.com.br
+        <EnrollmentButton className={styles.heroCta}>
+          Fazer inscrição
         </EnrollmentButton>
       </header>
 
       <div className={styles.methods}>
-        {methods.map((method, index) => (
+        {methods.map((method) => (
           <IngressMethodCard
             key={method.id}
             method={method}
             enrollmentUrl={enrollmentUrl}
-            index={index}
           />
         ))}
       </div>

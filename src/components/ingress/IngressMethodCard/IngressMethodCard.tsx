@@ -1,26 +1,18 @@
 import type { IngressMethod } from '../../../types';
-import { ArrowRightIcon } from '../../ui/icons';
 import { Button } from '../../ui/Button';
 import styles from './IngressMethodCard.module.css';
 
 interface IngressMethodCardProps {
   method: IngressMethod;
   enrollmentUrl: string;
-  index: number;
 }
 
-export function IngressMethodCard({ method, enrollmentUrl, index }: IngressMethodCardProps) {
+export function IngressMethodCard({ method, enrollmentUrl }: IngressMethodCardProps) {
   const hasDocuments = method.requiredDocuments.length > 0;
 
   return (
     <article className={styles.card}>
-      <div className={styles.header}>
-        <span className={styles.badge} aria-hidden="true">
-          {String(index + 1).padStart(2, '0')}
-        </span>
-        <h2 className={styles.title}>{method.name}</h2>
-      </div>
-
+      <h2 className={styles.title}>{method.name}</h2>
       <p className={styles.description}>{method.description}</p>
 
       <div className={styles.documents}>
@@ -33,8 +25,7 @@ export function IngressMethodCard({ method, enrollmentUrl, index }: IngressMetho
           </ul>
         ) : (
           <p className={styles.documentsPlaceholder}>
-            Lista de documentos em atualização. Em breve você encontrará aqui os requisitos
-            para esta forma de ingresso.
+            Lista de documentos em atualização.
           </p>
         )}
       </div>
@@ -46,8 +37,7 @@ export function IngressMethodCard({ method, enrollmentUrl, index }: IngressMetho
         rel="noopener noreferrer"
         className={styles.cta}
       >
-        Iniciar inscrição no vestibular
-        <ArrowRightIcon className={styles.ctaIcon} />
+        Fazer inscrição
       </Button>
     </article>
   );
