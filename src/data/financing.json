@@ -1,0 +1,103 @@
+{
+  "sourceUrl": "https://www.femaf.com.br/financiamentos",
+  "punctualityRule": "O desconto de pontualidade é concedido quando o pagamento da mensalidade é feito até a data de vencimento.",
+  "punctualityDiscounts": [
+    {
+      "courseId": "engenharia-civil",
+      "courseLabel": "Engenharia Civil",
+      "percent": 35
+    },
+    {
+      "courseId": "ciencias-contabeis",
+      "courseLabel": "Ciências Contábeis",
+      "percent": 25
+    },
+    {
+      "courseId": "servico-social",
+      "courseLabel": "Serviço Social",
+      "percent": 15
+    },
+    {
+      "courseId": "direito",
+      "courseLabel": "Direito (residente na sede)",
+      "percent": 10,
+      "condition": "Para quem reside na sede: Pedreiras e Trizidela do Vale."
+    },
+    {
+      "courseId": "farmacia",
+      "courseLabel": "Farmácia",
+      "percent": 30
+    },
+    {
+      "courseId": "psicologia",
+      "courseLabel": "Psicologia",
+      "percent": 20
+    },
+    {
+      "courseId": "pedagogia",
+      "courseLabel": "Pedagogia",
+      "percent": 10
+    },
+    {
+      "courseId": "direito",
+      "courseLabel": "Direito (outras cidades / Auxílio Transporte)",
+      "percent": 30,
+      "condition": "Para estudantes que moram em cidades a mais de 15 km de Pedreiras e Trizidela do Vale. Esse percentual integra o benefício de Auxílio Transporte.",
+      "program": "auxilio-transporte"
+    },
+    {
+      "courseId": "educacao-fisica",
+      "courseLabel": "Educação Física",
+      "percent": 15
+    },
+    {
+      "courseId": "administracao",
+      "courseLabel": "Administração",
+      "percent": 10
+    }
+  ],
+  "notListedCourses": [
+    "Agronegócio não aparece na tabela de descontos da página de financiamentos. Não informar percentual de pontualidade para esse curso; orientar contato com a FEMAF."
+  ],
+  "governmentPrograms": [
+    {
+      "name": "ENEM",
+      "detail": "A nota do ENEM pode ser usada para ingresso na FEMAF com condições exclusivas. Quanto melhor o desempenho, maiores as vantagens. A página não detalha percentuais por faixa de nota; não inventar valores."
+    },
+    {
+      "name": "FIES",
+      "detail": "Programa de financiamento estudantil do Governo Federal. Permite focar nos estudos agora e pagar as mensalidades após a formatura. Elegibilidade, vagas e regras atuais devem ser confirmadas no processo seletivo ou com a equipe FEMAF."
+    },
+    {
+      "name": "PROUNI",
+      "detail": "Programa de bolsas de estudo em instituições privadas, com classificação pelo ENEM. Elegibilidade, vagas e regras atuais devem ser confirmadas no processo seletivo ou com a equipe FEMAF."
+    }
+  ],
+  "femafPrograms": [
+    {
+      "id": "auxilio-transporte",
+      "name": "Auxílio Transporte",
+      "detail": "Apoio a quem vem de longe. Desconto de 30% no curso de Direito para estudantes que residem em cidades num raio acima de 15 km de Pedreiras e Trizidela do Vale. A distância não deve ser impedimento para cursar Direito na sede."
+    },
+    {
+      "id": "convenios",
+      "name": "Convênios institucionais",
+      "detail": "Colaboradores e associados de instituições parceiras da FEMAF podem ter descontos exclusivos. O interessado deve informar a instituição/associação e pedir validação do benefício. Não inventar percentual de convênio se a pessoa não tiver o benefício confirmado."
+    },
+    {
+      "id": "parceria-empresas",
+      "name": "Parceria para empresas",
+      "detail": "Empresas podem se tornar parceiras da FEMAF para oferecer educação como benefício a colaboradores. Encaminhar o interessado institucional para contato com a FEMAF."
+    }
+  ],
+  "agentGuidance": [
+    "Para perguntas de desconto de pontualidade, use a tabela desta seção (site oficial /financiamentos), não invente percentuais.",
+    "O desconto de pontualidade vale para pagamento até a data de vencimento.",
+    "Direito tem duas faixas: 10% se o aluno reside na sede (Pedreiras e Trizidela do Vale); 30% se mora a mais de 15 km dessas cidades (Auxílio Transporte).",
+    "Se a pessoa perguntar desconto de Direito, pergunte a cidade onde mora antes de informar o percentual.",
+    "Tecnólogo em Agronegócio não consta nessa tabela oficial; não afirmar percentual.",
+    "FIES e PROUNI existem como programas governamentais mencionados pela FEMAF; não garantir aprovação, vaga ou percentual. Oriente inscrição e confirmação com a equipe.",
+    "Convênios existem, mas o percentual só é informado após validação. Peça o nome da empresa/associação e oriente contato.",
+    "Esta tabela institucional prevalece sobre percentuais antigos do catálogo quando houver diferença."
+  ]
+}

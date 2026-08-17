@@ -1,0 +1,55 @@
+{
+  "name": "Faculdade de Educação Memorial Adelaide Franco",
+  "acronym": "FEMAF",
+  "city": "Pedreiras",
+  "state": "Maranhão",
+  "foundedYear": 2015,
+  "sourceUrl": "https://www.femaf.com.br/a-femaf",
+  "summary": "Instituição de ensino superior com sede em Pedreiras, no interior do Maranhão. Une ensino presencial e EAD com autorização e reconhecimento do MEC. Os gestores acumulam mais de 40 anos de experiência educacional.",
+  "history": "A FEMAF nasceu com o objetivo de democratizar o ensino superior com qualidade e compromisso social. Foi pioneira no interior do Maranhão ao oferecer cursos a distância autorizados e reconhecidos pelo MEC, unindo o fortalecimento do presencial à inovação responsável do EAD. Em 2025, completou 10 anos como faculdade de alcance nacional, mantendo o propósito de humanizar a formação profissional.",
+  "identityFacts": [
+    "Nome completo: Faculdade de Educação Memorial Adelaide Franco (FEMAF).",
+    "Sede: Pedreiras, Maranhão.",
+    "Fundação: 2015.",
+    "Primeira instituição do interior do Maranhão a oferecer cursos EAD autorizados e reconhecidos pelo MEC.",
+    "Oferece graduação presencial e EAD; também possui pós-graduação no portfólio institucional.",
+    "Atua com alcance nacional, com origem e sede em Pedreiras–MA."
+  ],
+  "mission": "Promover a integração indissociável entre ensino, pesquisa e extensão. Formar o espírito científico do aluno, renovar metodologias de aprendizagem e contribuir para a análise crítica da realidade socioeconômica, especialmente no Maranhão e no Nordeste brasileiro.",
+  "vision": "Ser o elo transformador entre a academia e a sociedade. A extensão é tratada como produção de conhecimento vivo, em que profissionais instrumentalizados solucionam problemas reais, com faculdade e comunidade em relação integrada e sistemática.",
+  "objectives": [
+    "Estimular a criatividade e o aprimoramento cultural de docentes e discentes.",
+    "Atualizar constantemente as técnicas e metodologias de aprendizagem.",
+    "Fornecer subsídios teórico-práticos para intervenções profissionais transformadoras.",
+    "Analisar e compreender a realidade educacional nacional, com ênfase regional."
+  ],
+  "milestones": [
+    {
+      "period": "2015",
+      "title": "Fundação",
+      "detail": "Início em Pedreiras–MA, com foco em cursos presenciais estratégicos."
+    },
+    {
+      "period": "Expansão",
+      "title": "EAD responsável",
+      "detail": "Lançamento do EAD, levando a formação FEMAF para outros estados, com autorização e reconhecimento do MEC."
+    },
+    {
+      "period": "Consolidação",
+      "title": "Reconhecimento",
+      "detail": "Reconhecimento pelo MEC e ampliação do portfólio de graduação e pós-graduação."
+    },
+    {
+      "period": "2025",
+      "title": "10 anos",
+      "detail": "Uma década de atuação institucional."
+    }
+  ],
+  "agentGuidance": [
+    "Se perguntarem onde a FEMAF fica: sede em Pedreiras, Maranhão.",
+    "Se perguntarem se o EAD é reconhecido: sim; a instituição destaca-se por EAD autorizado e reconhecido pelo MEC e foi pioneira nisso no interior do Maranhão.",
+    "Se perguntarem há quanto tempo existe: fundada em 2015; em 2025 completou 10 anos.",
+    "Se perguntarem o diferencial institucional: qualidade com compromisso social, presencial e EAD, formação humanizada e integração entre ensino, pesquisa e extensão.",
+    "A FEMAF também oferece pós-graduação EAD no portal posgraduacao.femaf.com.br (FEMAF DIGITAL). Detalhes dos cursos de pós estão na seção Pós-graduação desta base; não misturar com graduação."
+  ]
+}

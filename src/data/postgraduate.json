@@ -1,0 +1,151 @@
+{
+  "sourceUrl": "https://posgraduacao.femaf.com.br/",
+  "brand": "FEMAF DIGITAL",
+  "title": "Pós-graduação EAD FEMAF",
+  "modality": "EAD",
+  "summary": "A FEMAF oferece especializações e MBAs em EAD no portal FEMAF DIGITAL, separado do catálogo de graduação. São 27 opções, filtradas por área de conhecimento.",
+  "contactGuidance": "Atendimento e matrícula da pós-graduação devem ser feitos pelo site posgraduacao.femaf.com.br, pelo botão de WhatsApp daquela página. Não usar preços, descontos ou regras de turno da graduação para responder sobre pós.",
+  "areas": [
+    {
+      "name": "Educação",
+      "courses": [
+        {
+          "name": "Educação Inclusiva",
+          "summary": "Formação para atuação na educação inclusiva, com políticas públicas, práticas pedagógicas e tecnologias educacionais."
+        },
+        {
+          "name": "Gestão e Supervisão Escolar",
+          "summary": "Formação em gestão educacional: liderança, organização escolar e processos administrativos."
+        },
+        {
+          "name": "LIBRAS",
+          "summary": "Capacita profissionais para atuação com a Língua Brasileira de Sinais no contexto educacional."
+        },
+        {
+          "name": "Docência do Ensino Fundamental e Médio",
+          "summary": "Formação docente com foco em práticas pedagógicas e organização do ensino."
+        },
+        {
+          "name": "Docência da Educação de Campo, Quilombola e Afro-Brasileira",
+          "summary": "Formação para docentes atuarem com perspectiva étnico-racial, educação do campo e comunidades quilombolas na educação básica."
+        },
+        {
+          "name": "Docência do Ensino de História para a Educação Básica",
+          "summary": "Especialização para professores de História, com fundamentos teóricos e práticas de ensino na educação básica."
+        },
+        {
+          "name": "Docência do Ensino de Geografia para Educação Básica",
+          "summary": "Capacita docentes de Geografia com base teórica e práticas pedagógicas para a educação básica."
+        },
+        {
+          "name": "Docência do Ensino de Matemática para Educação Básica",
+          "summary": "Formação docente em Matemática com práticas de ensino, ludicidade e tecnologias na educação básica."
+        },
+        {
+          "name": "Educação Infantil e Neurociência",
+          "summary": "Integra fundamentos da educação infantil com neurociências aplicadas à aprendizagem e ao desenvolvimento na primeira infância."
+        },
+        {
+          "name": "Fundamentos da Alfabetização e Letramento para o Ensino Fundamental",
+          "summary": "Formação em alfabetização e letramento no ensino fundamental, com metodologias e contextos diversos."
+        },
+        {
+          "name": "Tecnologias Educacionais e Ensino Híbrido",
+          "summary": "Capacita profissionais para planejar, gerir e ofertar cursos com tecnologias educacionais e modalidade híbrida."
+        }
+      ]
+    },
+    {
+      "name": "Serviço Social",
+      "courses": [
+        {
+          "name": "Instrumentalidade do Serviço Social",
+          "summary": "Formação voltada ao desenvolvimento de competências técnicas e práticas no serviço social."
+        }
+      ]
+    },
+    {
+      "name": "Administração",
+      "courses": [
+        {
+          "name": "MBA em Gestão de Pessoas (RH)",
+          "summary": "Gestão de pessoas, processos de RH, legislação trabalhista e desenvolvimento por competências."
+        },
+        {
+          "name": "MBA em Gestão Empresarial / Administração",
+          "summary": "Gestão empresarial com governança, informação, marketing, projetos, produção, finanças e contabilidade."
+        },
+        {
+          "name": "MBA em Finanças e Controladoria",
+          "summary": "Finanças, contabilidade e controle na administração pública e gestão de recursos institucionais."
+        },
+        {
+          "name": "MBA em Marketing Digital",
+          "summary": "Estratégias digitais, mídias, e-commerce, métricas de performance e experiência do usuário."
+        },
+        {
+          "name": "MBA em Gestão Comercial e Vendas",
+          "summary": "Formação para líderes comerciais: vendas, marketing, finanças corporativas, big data e comportamento do consumidor."
+        },
+        {
+          "name": "MBA em Liderança e Inovação",
+          "summary": "Liderança, inovação organizacional, gestão de mudanças e transformação digital."
+        },
+        {
+          "name": "MBA em Gestão Estratégica de Negócios",
+          "summary": "Planejamento estratégico, finanças, marketing, operações, inovação e tomada de decisão."
+        }
+      ]
+    },
+    {
+      "name": "Saúde",
+      "courses": [
+        {
+          "name": "Psicologia do Desenvolvimento e da Personalidade",
+          "summary": "Estuda os processos de desenvolvimento humano e formação da personalidade."
+        },
+        {
+          "name": "Transtornos de Aprendizagem",
+          "summary": "Identificação e intervenção em dificuldades e transtornos de aprendizagem."
+        },
+        {
+          "name": "Psicomotricidade",
+          "summary": "Desenvolvimento psicomotor e aplicações educacionais."
+        },
+        {
+          "name": "Psicopedagogia Clínica e Institucional",
+          "summary": "Atuação psicopedagógica em contextos clínicos e institucionais."
+        },
+        {
+          "name": "Assistência Social e Saúde Pública",
+          "summary": "Gestão e execução de políticas públicas em saúde e assistência social."
+        }
+      ]
+    },
+    {
+      "name": "Tecnologia",
+      "courses": [
+        {
+          "name": "Pós em Inteligência Artificial",
+          "summary": "Fundamentos de IA, machine learning, deep learning, NLP, ciência de dados e aplicações inteligentes."
+        },
+        {
+          "name": "Pós em Segurança da Informação",
+          "summary": "Segurança da informação, governança, criptografia, redes e conformidade."
+        },
+        {
+          "name": "Pós em Análise de Sistemas / TI",
+          "summary": "Fundamentos de TI, arquitetura de sistemas, banco de dados, segurança e transformação digital."
+        }
+      ]
+    }
+  ],
+  "agentGuidance": [
+    "Se a pessoa pedir pós-graduação, especialização ou MBA, esta seção é a fonte. Não confundir com os cursos de graduação.",
+    "A pós-graduação FEMAF é EAD, no portal https://posgraduacao.femaf.com.br/ (marca FEMAF DIGITAL).",
+    "Há 27 cursos nas áreas de Educação, Serviço Social, Administração, Saúde e Tecnologia. O site também lista o filtro Ciências Contábeis; os MBAs de finanças/controladoria ficam na área de Administração.",
+    "A listagem oficial não informa mensalidade, desconto, duração nem turno. Não inventar esses dados. Encaminhar para o site da pós ou para o WhatsApp daquela página.",
+    "Inscrição da pós não é a mesma URL da graduação (vestibular2.femaf.com.br), salvo confirmação posterior. Para pós, use posgraduacao.femaf.com.br.",
+    "Se perguntarem se a FEMAF tem pós em um tema: confira a lista desta seção. Se não estiver listado, diga que não consta no catálogo atual de pós EAD e ofereça os cursos próximos ou o contato no site."
+  ]
+}

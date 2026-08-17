@@ -26,5 +26,39 @@
       "description": "Para quem já possui diploma de curso superior e deseja uma nova formação.",
       "requiredDocuments": []
     }
-  ]
+  ],
+  "matricula": {
+    "documents": [
+      "RG",
+      "CPF",
+      "Título de eleitor",
+      "Comprovante de residência",
+      "Certidão de nascimento",
+      "Histórico escolar",
+      "Certificado do ensino médio",
+      "Reservista (somente para o sexo masculino)",
+      "Diploma (somente para os casos de segunda graduação)",
+      "E-mail válido"
+    ],
+    "delivery": {
+      "ead": "Para cursos EAD, todos os documentos devem ser enviados em PDF via WhatsApp.",
+      "presencial": "Para cursos presenciais e semipresenciais, a matrícula é presencial no Setor Acadêmico, de segunda a sexta, das 16:00 às 22:00. É necessário apresentar originais e cópias (xerox) dos documentos.",
+      "semipresencial": "Para cursos presenciais e semipresenciais, a matrícula é presencial no Setor Acadêmico, de segunda a sexta, das 16:00 às 22:00. É necessário apresentar originais e cópias (xerox) dos documentos."
+    },
+    "academicSector": {
+      "name": "Setor Acadêmico",
+      "days": "segunda a sexta",
+      "hours": "16:00 às 22:00"
+    },
+    "agentGuidance": [
+      "Inscrição online (vestibular, ENEM, transferência, segunda graduação) é em vestibular2.femaf.com.br. A matrícula, depois da aprovação, segue as regras desta seção.",
+      "Liste os documentos completos quando a pessoa perguntar o que precisa para matricular.",
+      "Reservista só é exigido para o sexo masculino.",
+      "Diploma só é exigido em segunda graduação.",
+      "Se o curso for EAD: documentos em PDF pelo WhatsApp (0800 878 5129).",
+      "Se o curso for presencial ou semipresencial: comparecer ao Setor Acadêmico, segunda a sexta, 16:00 às 22:00, com originais e xerox.",
+      "Se o curso tiver presencial e EAD (ex.: Pedagogia), pergunte a modalidade escolhida antes de explicar como entregar os documentos.",
+      "Estas regras são de matrícula de graduação. Para pós-graduação, encaminhar ao portal posgraduacao.femaf.com.br."
+    ]
+  }
 }

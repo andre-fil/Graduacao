@@ -82,12 +82,191 @@ function offerBlock(course, modalityId, modalityName) {
   ${field('Modalidade', escapeHtml(modalityName))}
   ${field('Valor', `${escapeHtml(formatMoney(price.original))} por mês (mensalidade integral)`)}
   ${field(
-    'Desconto de pontualidade',
-    `${escapeHtml(formatPercent(price.punctualityPercent))}% — mensalidade com pontualidade: ${escapeHtml(formatMoney(price.punctualityDiscount))} por mês. Concedido quando o pagamento é realizado em dia.`,
+    'Desconto de pontualidade no cadastro interno',
+    `${escapeHtml(formatPercent(price.punctualityPercent))}% — mensalidade com pontualidade: ${escapeHtml(formatMoney(price.punctualityDiscount))} por mês. Se divergir da tabela institucional, prevalece a tabela da seção Financiamentos.`,
   )}
   ${field('Turno', escapeHtml(turno))}
   ${aviso}
 </section>`;
+}
+
+function renderEnrollmentSection(ingress) {
+  const matricula = ingress?.matricula;
+  if (!matricula) return '';
+
+  return `
+<article id="documentos-matricula">
+  <h2>Documentos necessários para matrícula (graduação)</h2>
+  ${field('Setor Acadêmico (presencial e semipresencial)', escapeHtml(`${matricula.academicSector.name} — ${matricula.academicSector.days}, ${matricula.academicSector.hours}`))}
+  <h3>Lista de documentos</h3>
+  ${list(matricula.documents)}
+  <h3>Como entregar, conforme a modalidade</h3>
+  ${field('EAD', escapeHtml(matricula.delivery.ead))}
+  ${field('Presencial e semipresencial', escapeHtml(matricula.delivery.presencial))}
+  <h3>Como responder perguntas de matrícula</h3>
+  ${list(matricula.agentGuidance)}
+</article>`;
+}
+
+function enrollmentNotesForCourse(course, matricula) {
+  if (!matricula) return '';
+
+  const ids = course.modalityIds ?? [];
+  const notes = [];
+  if (ids.includes('ead')) notes.push(matricula.delivery.ead);
+  if (ids.includes('presencial') || ids.includes('semipresencial')) {
+    notes.push(matricula.delivery.presencial);
+  }
+  const extra =
+    ids.includes('ead') && (ids.includes('presencial') || ids.includes('semipresencial'))
+      ? ' Este curso tem mais de uma modalidade: confirme se a matrícula é EAD ou presencial antes de orientar a entrega dos documentos.'
+      : '';
+
+  return field(
+    'Matrícula e documentos',
+    escapeHtml(
+      `Documentos: ${matricula.documents.join('; ')}. ${notes.join(' ')}${extra} Ver seção Documentos necessários para matrícula.`,
+    ),
+  );
+}
+
+function renderInstitutionSection(institution) {
+  if (!institution) return '';
+
+  const facts = list(institution.identityFacts);
+  const objectives = list(institution.objectives);
+  const guidance = list(institution.agentGuidance);
+  const milestones = (institution.milestones ?? [])
+    .map(
+      (item) =>
+        `<li><strong>${escapeHtml(item.period)} — ${escapeHtml(item.title)}:</strong> ${escapeHtml(item.detail)}</li>`,
+    )
+    .join('');
+
+  return `
+<article id="sobre-a-femaf">
+  <h2>Sobre a FEMAF (instituição)</h2>
+  ${field('Nome completo', escapeHtml(institution.name))}
+  ${field('Sigla', escapeHtml(institution.acronym))}
+  ${field('Sede', escapeHtml(`${institution.city}, ${institution.state}`))}
+  ${field('Ano de fundação', escapeHtml(String(institution.foundedYear)))}
+  ${field('Fonte', `<a href="${escapeHtml(institution.sourceUrl)}">${escapeHtml(institution.sourceUrl)}</a>`)}
+  <h3>Fatos para atendimento</h3>
+  ${facts}
+  <h3>História</h3>
+  ${paragraphs(institution.history)}
+  <h3>Missão</h3>
+  ${paragraphs(institution.mission)}
+  <h3>Visão</h3>
+  ${paragraphs(institution.vision)}
+  <h3>Objetivos</h3>
+  ${objectives}
+  <h3>Linha do tempo</h3>
+  <ul>${milestones}</ul>
+  <h3>Como responder perguntas sobre a instituição</h3>
+  ${guidance}
+</article>`;
+}
+
+function renderFinancingSection(financing) {
+  if (!financing) return '';
+
+  const discounts = (financing.punctualityDiscounts ?? [])
+    .map((item) => {
+      const condition = item.condition ? ` ${escapeHtml(item.condition)}` : '';
+      return `<li><strong>${escapeHtml(item.courseLabel)}:</strong> ${escapeHtml(String(item.percent))}% de desconto de pontualidade.${condition}</li>`;
+    })
+    .join('');
+
+  const government = (financing.governmentPrograms ?? [])
+    .map(
+      (item) =>
+        `<div class="faq-item"><p><strong>${escapeHtml(item.name)}</strong></p><p>${escapeHtml(item.detail)}</p></div>`,
+    )
+    .join('');
+
+  const femafPrograms = (financing.femafPrograms ?? [])
+    .map(
+      (item) =>
+        `<div class="faq-item"><p><strong>${escapeHtml(item.name)}</strong></p><p>${escapeHtml(item.detail)}</p></div>`,
+    )
+    .join('');
+
+  return `
+<article id="financiamentos">
+  <h2>Financiamentos, bolsas e descontos</h2>
+  ${field('Fonte', `<a href="${escapeHtml(financing.sourceUrl)}">${escapeHtml(financing.sourceUrl)}</a>`)}
+  ${field('Regra de pontualidade', escapeHtml(financing.punctualityRule))}
+  <h3>Tabela oficial de desconto de pontualidade</h3>
+  <ul>${discounts}</ul>
+  <h3>Cursos sem percentual nesta tabela</h3>
+  ${list(financing.notListedCourses)}
+  <h3>Programas governamentais</h3>
+  ${government}
+  <h3>Programas FEMAF</h3>
+  ${femafPrograms}
+  <h3>Como responder perguntas de desconto e financiamento</h3>
+  ${list(financing.agentGuidance)}
+</article>`;
+}
+
+function officialDiscountBlock(course, financing) {
+  const rows = (financing?.punctualityDiscounts ?? []).filter(
+    (item) => item.courseId === course.id,
+  );
+  if (!rows.length) {
+    return field(
+      'Desconto de pontualidade (tabela institucional)',
+      'Não consta na tabela oficial de financiamentos. Não informar percentual; orientar contato com a FEMAF.',
+    );
+  }
+
+  const text = rows
+    .map((item) => {
+      const condition = item.condition ? ` ${item.condition}` : '';
+      return `${item.percent}%${condition}`;
+    })
+    .join(' | ');
+
+  return field(
+    'Desconto de pontualidade (tabela institucional)',
+    escapeHtml(`${text} Fonte: página de financiamentos da FEMAF. Preferir este percentual ao responder o aluno.`),
+  );
+}
+
+function renderPostgraduateSection(postgraduate) {
+  if (!postgraduate) return '';
+
+  const areas = (postgraduate.areas ?? [])
+    .map((area) => {
+      const courses = (area.courses ?? [])
+        .map(
+          (course) =>
+            `<li><strong>${escapeHtml(course.name)}:</strong> ${escapeHtml(course.summary)}</li>`,
+        )
+        .join('');
+      return `<h3>Área: ${escapeHtml(area.name)}</h3><ul>${courses}</ul>`;
+    })
+    .join('\n');
+
+  const count = (postgraduate.areas ?? []).reduce(
+    (total, area) => total + (area.courses?.length ?? 0),
+    0,
+  );
+
+  return `
+<article id="pos-graduacao">
+  <h2>Pós-graduação EAD (FEMAF DIGITAL)</h2>
+  ${field('Portal', `<a href="${escapeHtml(postgraduate.sourceUrl)}">${escapeHtml(postgraduate.sourceUrl)}</a>`)}
+  ${field('Marca', escapeHtml(postgraduate.brand))}
+  ${field('Modalidade', escapeHtml(postgraduate.modality))}
+  ${field('Quantidade de cursos', escapeHtml(String(count)))}
+  ${field('Como encaminhar o interessado', escapeHtml(postgraduate.contactGuidance))}
+  <p>${escapeHtml(postgraduate.summary)}</p>
+  ${areas}
+  <h3>Como responder perguntas de pós-graduação</h3>
+  ${list(postgraduate.agentGuidance)}
+</article>`;
 }
 
 export function writeAgentKnowledgePage(courses) {
@@ -95,6 +274,15 @@ export function writeAgentKnowledgePage(courses) {
   const areas = JSON.parse(readFileSync(join(root, 'src', 'data', 'areas.json'), 'utf8'));
   const modalities = JSON.parse(readFileSync(join(root, 'src', 'data', 'modalities.json'), 'utf8'));
   const ingress = JSON.parse(readFileSync(join(root, 'src', 'data', 'ingress.json'), 'utf8'));
+  const institution = JSON.parse(
+    readFileSync(join(root, 'src', 'data', 'institution.json'), 'utf8'),
+  );
+  const financing = JSON.parse(
+    readFileSync(join(root, 'src', 'data', 'financing.json'), 'utf8'),
+  );
+  const postgraduate = JSON.parse(
+    readFileSync(join(root, 'src', 'data', 'postgraduate.json'), 'utf8'),
+  );
 
   const areaName = (id) => areas.find((item) => item.id === id)?.name ?? id;
   const modalityName = (id) => modalities.find((item) => item.id === id)?.name ?? id;
@@ -129,6 +317,8 @@ export function writeAgentKnowledgePage(courses) {
   ${course.emecProcess ? field('Portaria MEC', escapeHtml(course.emecProcess)) : ''}
   ${field('Formas de ingresso', escapeHtml(ingressList(course.ingress)))}
   ${field('Inscrição', `<a href="${ENROLLMENT_URL}">${ENROLLMENT_URL}</a>`)}
+  ${enrollmentNotesForCourse(course, ingress.matricula)}
+  ${officialDiscountBlock(course, financing)}
   ${offers}
   <h3>Resumo</h3>
   <p>${escapeHtml(course.summary)}</p>
@@ -179,24 +369,37 @@ export function writeAgentKnowledgePage(courses) {
 <body>
   <header>
     <h1>Fonte de conhecimento — Catálogo de cursos FEMAF</h1>
-    <p>Faculdade de Educação Memorial Adelaide Franco. Documento de referência para atendimento. Dados de mensalidade referentes a 2026.</p>
+    <p>Faculdade de Educação Memorial Adelaide Franco (FEMAF), sede em Pedreiras–MA. Documento de referência para atendimento. Dados de mensalidade referentes a 2026.</p>
     <p class="note"><strong>Regra de turno (presencial):</strong> os cursos presenciais funcionam no turno <strong>noturno</strong>. ${escapeHtml(PRESENCIAL_SHIFT_NOTICE)}</p>
     <p><strong>Inscrição (todas as formas de ingresso):</strong> <a href="${ENROLLMENT_URL}">${ENROLLMENT_URL}</a></p>
     <p><strong>WhatsApp:</strong> ${WHATSAPP_DISPLAY}</p>
     <p>${escapeHtml(ingress.generalInfo)}</p>
   </header>
 
-  <section>
+  <nav>
+    <h2>Índice desta base</h2>
+    <ul>
+      <li><a href="#sobre-a-femaf">Sobre a FEMAF (instituição)</a></li>
+      <li><a href="#financiamentos">Financiamentos, bolsas e descontos</a></li>
+      <li><a href="#pos-graduacao">Pós-graduação EAD</a></li>
+      <li><a href="#formas-de-ingresso">Formas de ingresso</a></li>
+      <li><a href="#documentos-matricula">Documentos e matrícula</a></li>
+      ${index}
+    </ul>
+  </nav>
+
+  ${renderInstitutionSection(institution)}
+
+  ${renderFinancingSection(financing)}
+
+  ${renderPostgraduateSection(postgraduate)}
+
+  <section id="formas-de-ingresso">
     <h2>Formas de ingresso</h2>
     ${methods}
   </section>
 
-  <nav>
-    <h2>Índice de cursos</h2>
-    <ul>
-      ${index}
-    </ul>
-  </nav>
+  ${renderEnrollmentSection(ingress)}
 
   ${articles}
 
