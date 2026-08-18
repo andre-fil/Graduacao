@@ -130,14 +130,14 @@ function renderEnrollmentSection(ingress) {
   return `
 <article id="documentos-matricula">
   <h2>Documentos necessários para matrícula (graduação)</h2>
-  ${field('Setor Acadêmico (presencial e semipresencial)', escapeHtml(`${matricula.academicSector.name} — ${matricula.academicSector.days}, ${matricula.academicSector.hours}. Endereço: ${matricula.academicSector.address ?? ''}`.trim()))}
+  ${field('Setor Acadêmico (presencial)', escapeHtml(`${matricula.academicSector.name} — ${matricula.academicSector.days}, ${matricula.academicSector.hours}. Endereço: ${matricula.academicSector.address ?? ''}`.trim()))}
   <h3>Lista de documentos</h3>
   ${list(matricula.documents)}
   <h3>Como entregar, conforme a modalidade</h3>
   ${field('EAD', escapeHtml(matricula.delivery.ead))}
-  ${field('Presencial e semipresencial', escapeHtml(matricula.delivery.presencial))}
+  ${field('Presencial', escapeHtml(matricula.delivery.presencial))}
   <h3>Prazos de matrícula</h3>
-  ${field('Presencial e semipresencial', escapeHtml(matricula.deadlines.presencial))}
+  ${field('Presencial', escapeHtml(matricula.deadlines.presencial))}
   ${field('EAD', escapeHtml(matricula.deadlines.ead))}
   <h3>Como responder perguntas de matrícula</h3>
   ${list(matricula.agentGuidance)}
@@ -150,19 +150,16 @@ function enrollmentNotesForCourse(course, matricula) {
   const ids = course.modalityIds ?? [];
   const notes = [];
   if (ids.includes('ead')) notes.push(matricula.delivery.ead);
-  if (ids.includes('presencial') || ids.includes('semipresencial')) {
+  if (ids.includes('presencial')) {
     notes.push(matricula.delivery.presencial);
   }
   const deadlines = [];
   if (ids.includes('ead') && matricula.deadlines?.ead) deadlines.push(matricula.deadlines.ead);
-  if (
-    (ids.includes('presencial') || ids.includes('semipresencial')) &&
-    matricula.deadlines?.presencial
-  ) {
+  if (ids.includes('presencial') && matricula.deadlines?.presencial) {
     deadlines.push(matricula.deadlines.presencial);
   }
   const extra =
-    ids.includes('ead') && (ids.includes('presencial') || ids.includes('semipresencial'))
+    ids.includes('ead') && ids.includes('presencial')
       ? ' Este curso tem mais de uma modalidade: confirme se a matrícula é EAD ou presencial antes de orientar a entrega dos documentos.'
       : '';
 

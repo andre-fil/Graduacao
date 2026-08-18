@@ -42,12 +42,10 @@
     ],
     "delivery": {
       "ead": "Para cursos EAD, todos os documentos devem ser enviados em PDF via WhatsApp.",
-      "presencial": "Para cursos presenciais e semipresenciais, a matrícula é presencial no Setor Acadêmico, Av. Dr. João Alberto, 100 - Maria Rita, Pedreiras - MA, 65725-000, de segunda a sexta, das 16:00 às 22:00. É necessário apresentar originais e cópias (xerox) dos documentos.",
-      "semipresencial": "Para cursos presenciais e semipresenciais, a matrícula é presencial no Setor Acadêmico, Av. Dr. João Alberto, 100 - Maria Rita, Pedreiras - MA, 65725-000, de segunda a sexta, das 16:00 às 22:00. É necessário apresentar originais e cópias (xerox) dos documentos."
+      "presencial": "Para cursos presenciais, a matrícula é presencial no Setor Acadêmico, Av. Dr. João Alberto, 100 - Maria Rita, Pedreiras - MA, 65725-000, de segunda a sexta, das 16:00 às 22:00. É necessário apresentar originais e cópias (xerox) dos documentos."
     },
     "deadlines": {
-      "presencial": "Para cursos presenciais e semipresenciais: no 1º semestre, a matrícula vai até o mês de abril; no 2º semestre, até o final de agosto.",
-      "semipresencial": "Para cursos presenciais e semipresenciais: no 1º semestre, a matrícula vai até o mês de abril; no 2º semestre, até o final de agosto.",
+      "presencial": "Para cursos presenciais: no 1º semestre, a matrícula vai até o mês de abril; no 2º semestre, até o final de agosto.",
       "ead": "Para cursos EAD, não há prazos de matrícula."
     },
     "academicSector": {
@@ -62,7 +60,8 @@
       "Reservista só é exigido para o sexo masculino.",
       "Diploma só é exigido em segunda graduação.",
       "Se o curso for EAD: documentos em PDF pelo WhatsApp (0800 878 5129). EAD não tem prazo de matrícula.",
-      "Se o curso for presencial ou semipresencial: comparecer ao Setor Acadêmico, Av. Dr. João Alberto, 100 - Maria Rita, Pedreiras - MA, 65725-000, segunda a sexta, 16:00 às 22:00, com originais e xerox. Prazo: 1º semestre até abril; 2º semestre até o final de agosto.",
+      "A graduação da FEMAF é apenas presencial ou EAD.",
+      "Se o curso for presencial: comparecer ao Setor Acadêmico, Av. Dr. João Alberto, 100 - Maria Rita, Pedreiras - MA, 65725-000, segunda a sexta, 16:00 às 22:00, com originais e xerox. Prazo: 1º semestre até abril; 2º semestre até o final de agosto.",
       "Se o curso tiver presencial e EAD (ex.: Pedagogia), pergunte a modalidade escolhida antes de explicar como entregar os documentos.",
       "Estas regras são de matrícula de graduação. Para pós-graduação, encaminhar ao portal posgraduacao.femaf.com.br."
     ]
