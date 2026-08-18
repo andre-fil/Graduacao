@@ -198,16 +198,13 @@ function renderFinancingSection(financing) {
     .join('');
 
   return `
-<article id="financiamentos">
-  <h2>Financiamentos, bolsas e descontos</h2>
-  ${field('Fonte', `<a href="${escapeHtml(financing.sourceUrl)}">${escapeHtml(financing.sourceUrl)}</a>`)}
-  ${field('Regra de pontualidade', escapeHtml(financing.punctualityRule))}
-  <p>O percentual e o valor com pontualidade de cada curso estão no bloco do próprio curso. Não há tabela geral de descontos nesta base.</p>
+<article id="programas-ingresso">
+  <h2>Programas de ingresso, FIES, PROUNI e convênios</h2>
   <h3>Programas governamentais</h3>
   ${government}
   <h3>Programas FEMAF</h3>
   ${femafPrograms}
-  <h3>Como responder perguntas de desconto e financiamento</h3>
+  <h3>Como responder</h3>
   ${list(financing.agentGuidance)}
 </article>`;
 }
@@ -357,7 +354,7 @@ export function writeAgentKnowledgePage(courses) {
     <h2>Índice desta base</h2>
     <ul>
       <li><a href="#sobre-a-femaf">Sobre a FEMAF (instituição)</a></li>
-      <li><a href="#financiamentos">Financiamentos, bolsas e descontos</a></li>
+      <li><a href="#programas-ingresso">Programas de ingresso, FIES, PROUNI e convênios</a></li>
       <li><a href="#pos-graduacao">Pós-graduação EAD</a></li>
       <li><a href="#formas-de-ingresso">Formas de ingresso</a></li>
       <li><a href="#documentos-matricula">Documentos e matrícula</a></li>
