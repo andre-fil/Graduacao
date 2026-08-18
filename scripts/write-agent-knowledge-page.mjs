@@ -67,6 +67,39 @@ function field(label, value) {
   return `<div class="field"><span class="label">${escapeHtml(label)}</span><span class="value">${value}</span></div>`;
 }
 
+function priceLine(course, modalityId, modalityName) {
+  const price = course.pricesByModality?.[modalityId] ?? course.price;
+  const title = courseTitle(course);
+  return `PREÇO | ${title} | ${modalityName} | integral ${formatMoney(price.original)} | pontualidade ${formatMoney(price.punctualityDiscount)} (${formatPercent(price.punctualityPercent)}%)`;
+}
+
+function renderPriceIndex(courses, modalityName) {
+  const lines = [];
+  for (const course of courses) {
+    for (const modalityId of course.modalityIds) {
+      lines.push(priceLine(course, modalityId, modalityName(modalityId)));
+    }
+  }
+
+  const direito = courses.find((course) => course.id === 'direito');
+  const direitoPrice = direito?.price;
+  const direitoCity = direitoPrice
+    ? `PREÇO-DIREITO-CIDADE | Direito | Presencial | mora em Pedreiras ou Trizidela do Vale | pontualidade 10% | mora a mais de 15 km dessas cidades | pontualidade 30% (Auxílio Transporte) | integral ${formatMoney(direitoPrice.original)}`
+    : '';
+
+  const allLines = direitoCity ? [direitoCity, ...lines] : lines;
+  const text = allLines.join('\n');
+  const htmlLines = allLines.map((line) => `<p>${escapeHtml(line)}</p>`).join('\n');
+
+  return `
+<article id="tabela-precos">
+  <h2>TABELA DE PREÇOS 2026 — uma linha por curso e modalidade</h2>
+  <p>Esta é a fonte de mensalidade da graduação. Ao informar valor, use SOMENTE a linha em que CURSO e MODALIDADE coincidem com a pergunta. Não copie o preço de outro curso. Pós-graduação não tem preço nesta tabela.</p>
+  ${htmlLines}
+  <pre>${escapeHtml(text)}</pre>
+</article>`;
+}
+
 function offerBlock(course, modalityId, modalityName) {
   const price = course.pricesByModality?.[modalityId] ?? course.price;
   const isPresencial = modalityId === 'presencial';
@@ -343,6 +376,7 @@ export function writeAgentKnowledgePage(courses) {
 <body>
   <header>
     <h1>Fonte de conhecimento — Catálogo de cursos FEMAF</h1>
+  ${renderPriceIndex(courses, modalityName)}
     <p>Faculdade de Educação Memorial Adelaide Franco (FEMAF), sede em Pedreiras–MA. Documento de referência para atendimento. Dados de mensalidade referentes a 2026.</p>
     <p class="note"><strong>Regra de turno (presencial):</strong> os cursos presenciais funcionam no turno <strong>noturno</strong>. ${escapeHtml(PRESENCIAL_SHIFT_NOTICE)}</p>
     <p><strong>Inscrição (todas as formas de ingresso):</strong> <a href="${ENROLLMENT_URL}">${ENROLLMENT_URL}</a></p>
@@ -353,6 +387,7 @@ export function writeAgentKnowledgePage(courses) {
   <nav>
     <h2>Índice desta base</h2>
     <ul>
+      <li><a href="#tabela-precos">Tabela de preços 2026</a></li>
       <li><a href="#sobre-a-femaf">Sobre a FEMAF (instituição)</a></li>
       <li><a href="#programas-ingresso">Programas de ingresso, FIES, PROUNI e convênios</a></li>
       <li><a href="#pos-graduacao">Pós-graduação EAD</a></li>
@@ -386,5 +421,22 @@ export function writeAgentKnowledgePage(courses) {
 
   const outPath = join(root, 'public', 'fonte-agente-cursos.html');
   writeFileSync(outPath, html, 'utf8');
+
+  const pricePage = `<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Preços graduação FEMAF 2026 — base do agente</title>
+</head>
+<body>
+  <h1>Preços da graduação FEMAF 2026</h1>
+  <p>Use somente a linha cujo curso e modalidade coincidem com a pergunta. Não misture com pós-graduação.</p>
+  ${renderPriceIndex(courses, modalityName)}
+</body>
+</html>
+`;
+  const pricePath = join(root, 'public', 'fonte-agente-precos.html');
+  writeFileSync(pricePath, pricePage, 'utf8');
   return outPath;
 }
