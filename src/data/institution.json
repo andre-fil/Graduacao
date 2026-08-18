@@ -3,6 +3,7 @@
   "acronym": "FEMAF",
   "city": "Pedreiras",
   "state": "Maranhão",
+  "address": "Av. Dr. João Alberto, 100 - Maria Rita, Pedreiras - MA, 65725-000",
   "foundedYear": 2015,
   "sourceUrl": "https://www.femaf.com.br/a-femaf",
   "summary": "Instituição de ensino superior com sede em Pedreiras, no interior do Maranhão. Une ensino presencial e EAD com autorização e reconhecimento do MEC. Os gestores acumulam mais de 40 anos de experiência educacional.",
@@ -10,6 +11,7 @@
   "identityFacts": [
     "Nome completo: Faculdade de Educação Memorial Adelaide Franco (FEMAF).",
     "Sede: Pedreiras, Maranhão.",
+    "Endereço: Av. Dr. João Alberto, 100 - Maria Rita, Pedreiras - MA, 65725-000.",
     "Fundação: 2015.",
     "Primeira instituição do interior do Maranhão a oferecer cursos EAD autorizados e reconhecidos pelo MEC.",
     "Oferece graduação presencial e EAD; também possui pós-graduação no portfólio institucional.",
@@ -46,7 +48,7 @@
     }
   ],
   "agentGuidance": [
-    "Se perguntarem onde a FEMAF fica: sede em Pedreiras, Maranhão.",
+    "Se perguntarem onde a FEMAF fica: Av. Dr. João Alberto, 100 - Maria Rita, Pedreiras - MA, CEP 65725-000.",
     "Se perguntarem se o EAD é reconhecido: sim; a instituição destaca-se por EAD autorizado e reconhecido pelo MEC e foi pioneira nisso no interior do Maranhão.",
     "Se perguntarem há quanto tempo existe: fundada em 2015; em 2025 completou 10 anos.",
     "Se perguntarem o diferencial institucional: qualidade com compromisso social, presencial e EAD, formação humanizada e integração entre ensino, pesquisa e extensão.",

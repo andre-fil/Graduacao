@@ -97,7 +97,7 @@ function renderEnrollmentSection(ingress) {
   return `
 <article id="documentos-matricula">
   <h2>Documentos necessários para matrícula (graduação)</h2>
-  ${field('Setor Acadêmico (presencial e semipresencial)', escapeHtml(`${matricula.academicSector.name} — ${matricula.academicSector.days}, ${matricula.academicSector.hours}`))}
+  ${field('Setor Acadêmico (presencial e semipresencial)', escapeHtml(`${matricula.academicSector.name} — ${matricula.academicSector.days}, ${matricula.academicSector.hours}. Endereço: ${matricula.academicSector.address ?? ''}`.trim()))}
   <h3>Lista de documentos</h3>
   ${list(matricula.documents)}
   <h3>Como entregar, conforme a modalidade</h3>
@@ -149,6 +149,7 @@ function renderInstitutionSection(institution) {
   ${field('Nome completo', escapeHtml(institution.name))}
   ${field('Sigla', escapeHtml(institution.acronym))}
   ${field('Sede', escapeHtml(`${institution.city}, ${institution.state}`))}
+  ${institution.address ? field('Endereço', escapeHtml(institution.address)) : ''}
   ${field('Ano de fundação', escapeHtml(String(institution.foundedYear)))}
   ${field('Fonte', `<a href="${escapeHtml(institution.sourceUrl)}">${escapeHtml(institution.sourceUrl)}</a>`)}
   <h3>Fatos para atendimento</h3>
