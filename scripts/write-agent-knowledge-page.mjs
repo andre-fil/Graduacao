@@ -82,8 +82,8 @@ function offerBlock(course, modalityId, modalityName) {
   ${field('Modalidade', escapeHtml(modalityName))}
   ${field('Valor', `${escapeHtml(formatMoney(price.original))} por mês (mensalidade integral)`)}
   ${field(
-    'Desconto de pontualidade no cadastro interno',
-    `${escapeHtml(formatPercent(price.punctualityPercent))}% — mensalidade com pontualidade: ${escapeHtml(formatMoney(price.punctualityDiscount))} por mês. Se divergir da tabela institucional, prevalece a tabela da seção Financiamentos.`,
+    'Desconto de pontualidade',
+    `${escapeHtml(formatPercent(price.punctualityPercent))}% — mensalidade com pontualidade: ${escapeHtml(formatMoney(price.punctualityDiscount))} por mês. Concedido quando o pagamento é realizado em dia.`,
   )}
   ${field('Turno', escapeHtml(turno))}
   ${aviso}
@@ -103,6 +103,9 @@ function renderEnrollmentSection(ingress) {
   <h3>Como entregar, conforme a modalidade</h3>
   ${field('EAD', escapeHtml(matricula.delivery.ead))}
   ${field('Presencial e semipresencial', escapeHtml(matricula.delivery.presencial))}
+  <h3>Prazos de matrícula</h3>
+  ${field('Presencial e semipresencial', escapeHtml(matricula.deadlines.presencial))}
+  ${field('EAD', escapeHtml(matricula.deadlines.ead))}
   <h3>Como responder perguntas de matrícula</h3>
   ${list(matricula.agentGuidance)}
 </article>`;
@@ -117,6 +120,14 @@ function enrollmentNotesForCourse(course, matricula) {
   if (ids.includes('presencial') || ids.includes('semipresencial')) {
     notes.push(matricula.delivery.presencial);
   }
+  const deadlines = [];
+  if (ids.includes('ead') && matricula.deadlines?.ead) deadlines.push(matricula.deadlines.ead);
+  if (
+    (ids.includes('presencial') || ids.includes('semipresencial')) &&
+    matricula.deadlines?.presencial
+  ) {
+    deadlines.push(matricula.deadlines.presencial);
+  }
   const extra =
     ids.includes('ead') && (ids.includes('presencial') || ids.includes('semipresencial'))
       ? ' Este curso tem mais de uma modalidade: confirme se a matrícula é EAD ou presencial antes de orientar a entrega dos documentos.'
@@ -125,7 +136,7 @@ function enrollmentNotesForCourse(course, matricula) {
   return field(
     'Matrícula e documentos',
     escapeHtml(
-      `Documentos: ${matricula.documents.join('; ')}. ${notes.join(' ')}${extra} Ver seção Documentos necessários para matrícula.`,
+      `Documentos: ${matricula.documents.join('; ')}. ${notes.join(' ')} ${deadlines.join(' ')}${extra} Ver seção Documentos necessários para matrícula.`,
     ),
   );
 }
@@ -172,13 +183,6 @@ function renderInstitutionSection(institution) {
 function renderFinancingSection(financing) {
   if (!financing) return '';
 
-  const discounts = (financing.punctualityDiscounts ?? [])
-    .map((item) => {
-      const condition = item.condition ? ` ${escapeHtml(item.condition)}` : '';
-      return `<li><strong>${escapeHtml(item.courseLabel)}:</strong> ${escapeHtml(String(item.percent))}% de desconto de pontualidade.${condition}</li>`;
-    })
-    .join('');
-
   const government = (financing.governmentPrograms ?? [])
     .map(
       (item) =>
@@ -198,10 +202,7 @@ function renderFinancingSection(financing) {
   <h2>Financiamentos, bolsas e descontos</h2>
   ${field('Fonte', `<a href="${escapeHtml(financing.sourceUrl)}">${escapeHtml(financing.sourceUrl)}</a>`)}
   ${field('Regra de pontualidade', escapeHtml(financing.punctualityRule))}
-  <h3>Tabela oficial de desconto de pontualidade</h3>
-  <ul>${discounts}</ul>
-  <h3>Cursos sem percentual nesta tabela</h3>
-  ${list(financing.notListedCourses)}
+  <p>O percentual e o valor com pontualidade de cada curso estão no bloco do próprio curso. Não há tabela geral de descontos nesta base.</p>
   <h3>Programas governamentais</h3>
   ${government}
   <h3>Programas FEMAF</h3>
@@ -209,30 +210,6 @@ function renderFinancingSection(financing) {
   <h3>Como responder perguntas de desconto e financiamento</h3>
   ${list(financing.agentGuidance)}
 </article>`;
-}
-
-function officialDiscountBlock(course, financing) {
-  const rows = (financing?.punctualityDiscounts ?? []).filter(
-    (item) => item.courseId === course.id,
-  );
-  if (!rows.length) {
-    return field(
-      'Desconto de pontualidade (tabela institucional)',
-      'Não consta na tabela oficial de financiamentos. Não informar percentual; orientar contato com a FEMAF.',
-    );
-  }
-
-  const text = rows
-    .map((item) => {
-      const condition = item.condition ? ` ${item.condition}` : '';
-      return `${item.percent}%${condition}`;
-    })
-    .join(' | ');
-
-  return field(
-    'Desconto de pontualidade (tabela institucional)',
-    escapeHtml(`${text} Fonte: página de financiamentos da FEMAF. Preferir este percentual ao responder o aluno.`),
-  );
 }
 
 function renderPostgraduateSection(postgraduate) {
@@ -319,7 +296,6 @@ export function writeAgentKnowledgePage(courses) {
   ${field('Formas de ingresso', escapeHtml(ingressList(course.ingress)))}
   ${field('Inscrição', `<a href="${ENROLLMENT_URL}">${ENROLLMENT_URL}</a>`)}
   ${enrollmentNotesForCourse(course, ingress.matricula)}
-  ${officialDiscountBlock(course, financing)}
   ${offers}
   <h3>Resumo</h3>
   <p>${escapeHtml(course.summary)}</p>
