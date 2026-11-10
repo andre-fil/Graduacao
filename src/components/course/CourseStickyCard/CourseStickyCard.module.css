@@ -114,6 +114,41 @@
   border-radius: var(--radius-full);
 }
 
+.vestibularBox {
+  margin: 0 0 var(--spacing-md);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  background: var(--color-primary-light);
+  border: 1px solid rgba(0, 128, 216, 0.2);
+}
+
+.vestibularTitle {
+  margin: 0 0 var(--spacing-sm);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-primary-dark);
+}
+
+.vestibularList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--spacing-xs);
+}
+
+.vestibularList li {
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+
+.vestibularList strong {
+  color: var(--color-primary-dark);
+}
+
 .actions {
   display: flex;
   flex-direction: column;

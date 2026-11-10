@@ -1,4 +1,4 @@
-import type { IngressMethod } from '../types';
+import type { IngressMethod, MatriculaInfo, VestibularInfo } from '../types';
 import { getIngressConfig } from './courseService';
 
 export function getIngressMethods(): IngressMethod[] {
@@ -15,4 +15,12 @@ export function getIngressGeneralInfo(): string {
 
 export function getIngressEnrollmentUrl(): string {
   return getIngressConfig().enrollmentUrl;
+}
+
+export function getVestibularInfo(): VestibularInfo | undefined {
+  return getIngressConfig().vestibular;
+}
+
+export function getMatriculaInfo(): MatriculaInfo | undefined {
+  return getIngressConfig().matricula;
 }

@@ -1,6 +1,7 @@
 import { ROUTES } from '../../../app/routes';
 import { editalLinkProps, enrollmentLinkProps } from '../../../constants/enrollment';
 import { useCourses } from '../../../hooks/useCourses';
+import { getVestibularInfo } from '../../../services';
 import { Button } from '../../ui/Button';
 import { EnrollmentButton } from '../../ui/EnrollmentButton';
 import { CourseSearch } from '../CourseSearch';
@@ -8,6 +9,7 @@ import styles from './HeroSection.module.css';
 
 export function HeroSection() {
   const { courses } = useCourses();
+  const vestibular = getVestibularInfo();
 
   return (
     <section className={styles.hero} aria-labelledby="hero-heading">
@@ -39,10 +41,14 @@ export function HeroSection() {
         </div>
 
         <div className={styles.vestibularCard}>
-          <span className={styles.vestibularEyebrow}>Processo seletivo 2027.1</span>
+          <span className={styles.vestibularEyebrow}>
+            {vestibular?.processName ?? 'Processo seletivo 2027.1'}
+          </span>
           <strong className={styles.vestibularTitle}>Vestibular FEMAF</strong>
           <p className={styles.vestibularText}>
-            Inscrição online, gratuita e rápida para o 1º semestre de 2027.
+            {vestibular
+              ? `Inscrição online e gratuita. Período: ${vestibular.enrollmentPeriod}.`
+              : 'Inscrição online, gratuita e rápida para o 1º semestre de 2027.'}
           </p>
           <div className={styles.vestibularActions}>
             <a {...enrollmentLinkProps} className={styles.vestibularLink}>

@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { editalLinkProps } from '../../../constants/enrollment';
 import type { Course } from '../../../types';
 import { useContact } from '../../../hooks/useContact';
-import { getModalityById } from '../../../services';
+import { getModalityById, getVestibularInfo } from '../../../services';
 import {
   buildCourseWhatsAppUrl,
 } from '../../../utils/buildCourseWhatsApp';
@@ -34,6 +34,7 @@ export function CourseStickyCard({ course }: CourseStickyCardProps) {
   const savings = original - punctualityDiscount;
 
   const whatsappUrl = buildCourseWhatsAppUrl(whatsapp.phone, course.name);
+  const vestibular = getVestibularInfo();
 
   return (
     <aside className={styles.card} aria-label="Informações de investimento e contato">
@@ -111,6 +112,26 @@ export function CourseStickyCard({ course }: CourseStickyCardProps) {
           </span>
           Economia de {formatCurrency(savings)}/mês no pagamento em dias
         </p>
+      )}
+
+      {vestibular && (
+        <div className={styles.vestibularBox}>
+          <p className={styles.vestibularTitle}>{vestibular.processName}</p>
+          <ul className={styles.vestibularList}>
+            <li>
+              <strong>Inscrições:</strong> {vestibular.enrollmentPeriod}
+            </li>
+            <li>
+              <strong>Taxa:</strong> {vestibular.enrollmentFee}
+            </li>
+            <li>
+              <strong>Prova:</strong> redação (15 a 20 linhas), online ou presencial
+            </li>
+            <li>
+              <strong>Matrícula dos aprovados:</strong> {vestibular.approvedEnrollmentPeriod}
+            </li>
+          </ul>
+        </div>
       )}
 
       <div className={styles.actions}>

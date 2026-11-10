@@ -6,6 +6,7 @@ import { CourseHero } from '../../components/course/CourseHero';
 import { CourseInfoGrid } from '../../components/course/CourseInfoGrid';
 import { CourseSection } from '../../components/course/CourseSection';
 import { CourseStickyCard } from '../../components/course/CourseStickyCard';
+import { CourseVestibularInfo } from '../../components/course/CourseVestibularInfo';
 import { Container } from '../../components/layout/Container';
 import { Accordion } from '../../components/ui/Accordion';
 import { Breadcrumb } from '../../components/ui/Breadcrumb';
@@ -53,6 +54,10 @@ export function CourseDetailPage() {
 
             <CourseSection id="course-info" title="Informações do curso">
               <CourseInfoGrid course={course} />
+            </CourseSection>
+
+            <CourseSection id="vestibular" title="Vestibular 2027.1 — datas e regras">
+              <CourseVestibularInfo />
             </CourseSection>
 
             <CourseBanners banners={course.banners} courseSlug={course.slug} />

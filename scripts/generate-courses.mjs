@@ -19,7 +19,7 @@ const FAQ = [
   {
     question: 'Quais as formas de ingresso?',
     answer:
-      'A FEMAF oferece Vestibular, ENEM, Transferência e Segunda Graduação. A inscrição é feita online em vestibular2.femaf.com.br. Em caso de dúvidas, fale com nossa equipe pelo WhatsApp.',
+      'A FEMAF oferece Vestibular, ENEM, Transferência e Segunda Graduação. No Vestibular 2027.1 (Edital n.º 008/2026-FEMAF), as inscrições vão de 16/11/2026 a 02/04/2027 às 23h59, são gratuitas e feitas em vestibular2.femaf.com.br. A prova é redação (15 a 20 linhas), online ou presencial. ENEM aceita notas a partir de 2021. Matrícula dos aprovados: 04/01/2027 a 31/03/2027. Em caso de dúvidas, fale com nossa equipe pelo WhatsApp.',
   },
   {
     question: 'Como funciona o desconto de mensalidade?',

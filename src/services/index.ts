@@ -12,5 +12,12 @@ export {
   getAllPriceRanges,
   getPriceRangeById,
 } from './courseService';
-export { getIngressMethods, getIngressMethodById, getIngressGeneralInfo, getIngressEnrollmentUrl } from './ingressService';
+export {
+  getIngressMethods,
+  getIngressMethodById,
+  getIngressGeneralInfo,
+  getIngressEnrollmentUrl,
+  getVestibularInfo,
+  getMatriculaInfo,
+} from './ingressService';
 export { filterCoursesList, filterCourses, searchCourses } from './filterService';

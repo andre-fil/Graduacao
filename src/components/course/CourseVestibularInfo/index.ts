@@ -1,0 +1,1 @@
+export { CourseVestibularInfo } from './CourseVestibularInfo';
