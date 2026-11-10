@@ -37,7 +37,7 @@ export function CourseStickyCard({ course }: CourseStickyCardProps) {
   return (
     <aside className={styles.card} aria-label="Informações de investimento e contato">
       <p className={styles.label}>
-        Investimento — mensalidade {priceEntries.length === 1 && priceEntries[0]?.modalityId === 'ead' ? 'EAD ' : ''}2026
+        Investimento — mensalidade {priceEntries.length === 1 && priceEntries[0]?.modalityId === 'ead' ? 'EAD ' : ''}2027.1
       </p>
 
       {hasMultipleModalities && (

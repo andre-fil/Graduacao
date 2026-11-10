@@ -5,7 +5,7 @@ import styles from './VestibularPromo.module.css';
 const highlights = [
   'Inscrição 100% online e gratuita',
   'Vestibular, ENEM, transferência e segunda graduação',
-  'Vagas para o 1º semestre de 2026',
+  'Vagas para o 1º semestre de 2027',
 ];
 
 export function VestibularPromo() {
@@ -15,7 +15,7 @@ export function VestibularPromo() {
         <div className={styles.content}>
           <p className={styles.eyebrow}>Processo seletivo FEMAF</p>
           <h2 id="vestibular-heading" className={styles.title}>
-            Vestibular 2026 — garanta sua vaga na graduação
+            Vestibular 2027.1 — garanta sua vaga na graduação
           </h2>
           <p className={styles.description}>
             As inscrições estão abertas em{' '}

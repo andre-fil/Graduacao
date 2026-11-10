@@ -73,7 +73,7 @@
       },
       {
         "question": "Como funciona o desconto de mensalidade?",
-        "answer": "A mensalidade integral é o valor tabelado do curso em 2026. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
+        "answer": "A mensalidade integral é o valor tabelado do curso para o Vestibular 2027.1. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
       },
       {
         "question": "A FEMAF possui laboratórios?",
@@ -119,7 +119,7 @@
     "image": "course-cover",
     "price": {
       "original": 1249,
-      "punctualityDiscount": 936.75,
+      "punctualityDiscount": 936,
       "punctualityPercent": 25
     },
     "summary": "Projete e gerencie obras de infraestrutura com sólida formação técnica e visão sustentável.",
@@ -157,7 +157,7 @@
       },
       {
         "question": "Como funciona o desconto de mensalidade?",
-        "answer": "A mensalidade integral é o valor tabelado do curso em 2026. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
+        "answer": "A mensalidade integral é o valor tabelado do curso para o Vestibular 2027.1. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
       },
       {
         "question": "A FEMAF possui laboratórios?",
@@ -207,9 +207,9 @@
     "emecProcess": "",
     "image": "course-cover",
     "price": {
-      "original": 1311.45,
-      "punctualityDiscount": 918,
-      "punctualityPercent": 30
+      "original": 1331,
+      "punctualityDiscount": 1064.8,
+      "punctualityPercent": 20
     },
     "summary": "Atue na promoção da saúde com domínio de medicamentos, análises clínicas e atenção farmacêutica.",
     "description": "O curso de Farmácia da FEMAF forma profissionais para desenvolver, produzir, dispensar e monitorar medicamentos com segurança e responsabilidade. A formação combina bases científicas, prática laboratorial e estágios em farmácias e instituições de saúde.\n\nO estudante aprende a atuar na atenção farmacêutica, orientando pacientes e contribuindo para o uso racional de medicamentos. O currículo abrange áreas como farmacologia, química, microbiologia e legislação sanitária.\n\nA FEMAF oferece infraestrutura de laboratórios e parcerias que aproximam o aluno da realidade profissional desde os primeiros semestres.",
@@ -246,7 +246,7 @@
       },
       {
         "question": "Como funciona o desconto de mensalidade?",
-        "answer": "A mensalidade integral é o valor tabelado do curso em 2026. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
+        "answer": "A mensalidade integral é o valor tabelado do curso para o Vestibular 2027.1. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
       },
       {
         "question": "A FEMAF possui laboratórios?",
@@ -330,7 +330,7 @@
       },
       {
         "question": "Como funciona o desconto de mensalidade?",
-        "answer": "A mensalidade integral é o valor tabelado do curso em 2026. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
+        "answer": "A mensalidade integral é o valor tabelado do curso para o Vestibular 2027.1. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
       },
       {
         "question": "A FEMAF possui laboratórios?",
@@ -393,9 +393,9 @@
     },
     "pricesByModality": {
       "ead": {
-        "original": 231,
-        "punctualityDiscount": 159.9,
-        "punctualityPercent": 30.78
+        "original": 254.67,
+        "punctualityPercent": 10,
+        "punctualityDiscount": 229.2
       }
     },
     "summary": "Transforme vidas pela educação com formação humanista, prática e compromisso social.",
@@ -433,7 +433,7 @@
       },
       {
         "question": "Como funciona o desconto de mensalidade?",
-        "answer": "A mensalidade integral é o valor tabelado do curso em 2026. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
+        "answer": "A mensalidade integral é o valor tabelado do curso para o Vestibular 2027.1. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
       },
       {
         "question": "A FEMAF possui laboratórios?",
@@ -451,10 +451,11 @@
   {
     "id": "servico-social",
     "slug": "servico-social",
-    "name": "Serviço Social -ead",
+    "name": "Serviço Social",
     "degree": "Bacharelado",
     "areaId": "humanas",
     "modalityIds": [
+      "presencial",
       "ead"
     ],
     "featured": false,
@@ -462,30 +463,43 @@
       "serviço social",
       "assistência social",
       "políticas públicas",
+      "presencial",
       "ead"
     ],
     "duration": "4 anos",
     "shift": [
+      "noturno",
       "ead"
     ],
     "schedules": [
+      {
+        "shift": "noturno",
+        "time": "18:30 às 22:00"
+      },
       {
         "shift": "ead",
         "time": "Horários flexíveis na plataforma EAD"
       }
     ],
     "mecRecognition": "Cursos reconhecidos pelo MEC",
-    "emecProcess": "Portaria MEC nº 567 de 16/12/2019",
+    "emecProcess": "Portaria MEC nº 34 de 01/03/2016",
     "image": "course-cover",
     "price": {
-      "original": 250,
-      "punctualityDiscount": 179.9,
-      "punctualityPercent": 28.04
+      "original": 445.98,
+      "punctualityDiscount": 379,
+      "punctualityPercent": 15
+    },
+    "pricesByModality": {
+      "ead": {
+        "original": 310,
+        "punctualityPercent": 38.74,
+        "punctualityDiscount": 189.9
+      }
     },
     "summary": "Promova justiça social e defesa de direitos com formação crítica e comprometida.",
-    "description": "O curso de Serviço Social da FEMAF forma profissionais para intervenção em políticas públicas, assistência social e organizações, com foco na transformação de realidades sociais. A formação desenvolve olhar crítico sobre as desigualdades e competências para atuação junto a indivíduos, famílias e comunidades.\n\nOferecido em EAD, o curso integra teoria e prática em equipamentos sociais, estágios e projetos extensionistas. O estudante aprende a planejar, executar e avaliar ações que promovam inclusão e cidadania.\n\nA ética profissional e o compromisso com os direitos humanos orientam toda a trajetória formativa.",
+    "description": "O curso de Serviço Social da FEMAF forma profissionais para intervenção em políticas públicas, assistência social e organizações, com foco na transformação de realidades sociais. A formação desenvolve olhar crítico sobre as desigualdades e competências para atuação junto a indivíduos, famílias e comunidades.\n\nDisponível nas modalidades presencial e EAD, o curso integra teoria e prática em equipamentos sociais, estágios e projetos extensionistas. O estudante aprende a planejar, executar e avaliar ações que promovam inclusão e cidadania.\n\nA ética profissional e o compromisso com os direitos humanos orientam toda a trajetória formativa.",
     "highlights": [
-      "100% EAD",
+      "Presencial e EAD",
       "Estágios em equipamentos sociais",
       "Formação político-social",
       "Compromisso com direitos humanos"
@@ -517,7 +531,7 @@
       },
       {
         "question": "Como funciona o desconto de mensalidade?",
-        "answer": "A mensalidade integral é o valor tabelado do curso em 2026. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
+        "answer": "A mensalidade integral é o valor tabelado do curso para o Vestibular 2027.1. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
       },
       {
         "question": "A FEMAF possui laboratórios?",
@@ -567,8 +581,8 @@
     "emecProcess": "",
     "image": "course-cover",
     "price": {
-      "original": 1030.28,
-      "punctualityDiscount": 824,
+      "original": 1249,
+      "punctualityDiscount": 999,
       "punctualityPercent": 20
     },
     "summary": "Compreenda o comportamento humano e atue na promoção da saúde mental e do bem-estar.",
@@ -606,7 +620,7 @@
       },
       {
         "question": "Como funciona o desconto de mensalidade?",
-        "answer": "A mensalidade integral é o valor tabelado do curso em 2026. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
+        "answer": "A mensalidade integral é o valor tabelado do curso para o Vestibular 2027.1. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
       },
       {
         "question": "A FEMAF possui laboratórios?",
@@ -650,9 +664,9 @@
     "emecProcess": "Portaria MEC nº 567 de 18/12/2019",
     "image": "course-cover",
     "price": {
-      "original": 250,
-      "punctualityDiscount": 179.9,
-      "punctualityPercent": 28.04
+      "original": 440.48,
+      "punctualityDiscount": 330.36,
+      "punctualityPercent": 25
     },
     "summary": "Domine contabilidade, finanças e auditoria com formação alinhada às exigências do mercado.",
     "description": "O curso de Ciências Contábeis da FEMAF forma profissionais para registrar, analisar e auditar informações financeiras de organizações de todos os portes. A grade contempla contabilidade, legislação tributária, custos, auditoria e gestão financeira.\n\nOferecido em EAD, o curso permite conciliar estudos e trabalho com flexibilidade. A formação prepara o aluno para os desafios da contabilidade moderna, incluindo sistemas de informação e conformidade fiscal.\n\nO egresso desenvolve rigor técnico, visão analítica e capacidade de apoiar decisões estratégicas com base em dados confiáveis.",
@@ -689,7 +703,7 @@
       },
       {
         "question": "Como funciona o desconto de mensalidade?",
-        "answer": "A mensalidade integral é o valor tabelado do curso em 2026. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
+        "answer": "A mensalidade integral é o valor tabelado do curso para o Vestibular 2027.1. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
       },
       {
         "question": "A FEMAF possui laboratórios?",
@@ -734,9 +748,9 @@
     "emecProcess": "Portaria MEC nº 451 de 05/02/2022",
     "image": "course-cover",
     "price": {
-      "original": 310.04,
+      "original": 310,
       "punctualityDiscount": 189.9,
-      "punctualityPercent": 38.75
+      "punctualityPercent": 38.74
     },
     "summary": "Gerencie propriedades rurais e negócios do agronegócio com visão empreendedora e sustentável.",
     "description": "O curso Tecnólogo em Agronegócio da FEMAF forma profissionais para gestão de produção, comercialização e sustentabilidade no setor agropecuário. Em 3 anos, o estudante desenvolve competências em gestão rural, economia agrícola, marketing e logística do agronegócio.\n\nNa modalidade EAD, o curso oferece flexibilidade para quem já atua no campo ou deseja empreender no setor. A formação combina conteúdos técnicos e gerenciais alinhados às demandas do mercado agro brasileiro.\n\nO egresso está preparado para tomar decisões estratégicas em propriedades rurais, cooperativas e empresas do agronegócio.",
@@ -773,7 +787,7 @@
       },
       {
         "question": "Como funciona o desconto de mensalidade?",
-        "answer": "A mensalidade integral é o valor tabelado do curso em 2026. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
+        "answer": "A mensalidade integral é o valor tabelado do curso para o Vestibular 2027.1. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
       },
       {
         "question": "A FEMAF possui laboratórios?",
@@ -818,9 +832,9 @@
     "emecProcess": "Portaria MEC nº 567 de 18/12/2019",
     "image": "course-cover",
     "price": {
-      "original": 250,
-      "punctualityDiscount": 179.9,
-      "punctualityPercent": 28.04
+      "original": 262.5,
+      "punctualityDiscount": 236.25,
+      "punctualityPercent": 10
     },
     "summary": "Forme-se para liderar equipes e gerenciar negócios com visão estratégica e empreendedora.",
     "description": "O curso de Administração da FEMAF prepara profissionais para planejar, organizar e dirigir recursos em organizações de todos os portes. A formação generalista abrange gestão de pessoas, finanças, marketing, operações e empreendedorismo.\n\nDisponível em EAD, o curso atende quem busca flexibilidade para estudar e trabalhar. Projetos práticos e estudos de caso aproximam o aluno de situações reais de gestão.\n\nO egresso desenvolve capacidade de liderança, tomada de decisão e visão sistêmica dos negócios, competências essenciais em um mercado dinâmico e competitivo.",
@@ -857,7 +871,7 @@
       },
       {
         "question": "Como funciona o desconto de mensalidade?",
-        "answer": "A mensalidade integral é o valor tabelado do curso em 2026. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
+        "answer": "A mensalidade integral é o valor tabelado do curso para o Vestibular 2027.1. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre \"Valor integral\" e \"Valor com desconto (pontualidade)\" para simular a mensalidade."
       },
       {
         "question": "A FEMAF possui laboratórios?",

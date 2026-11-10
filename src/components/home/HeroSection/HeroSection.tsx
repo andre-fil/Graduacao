@@ -40,10 +40,10 @@ export function HeroSection() {
           className={styles.vestibularCard}
           aria-label="Acessar inscrição do vestibular em vestibular2.femaf.com.br"
         >
-          <span className={styles.vestibularEyebrow}>Processo seletivo 2026</span>
+          <span className={styles.vestibularEyebrow}>Processo seletivo 2027.1</span>
           <strong className={styles.vestibularTitle}>Vestibular FEMAF</strong>
           <p className={styles.vestibularText}>
-            Inscrição online, gratuita e rápida para o 1º semestre de 2026.
+            Inscrição online, gratuita e rápida para o 1º semestre de 2027.
           </p>
           <span className={styles.vestibularLink}>vestibular2.femaf.com.br →</span>
           <ul className={styles.vestibularMeta}>
@@ -61,7 +61,7 @@ export function HeroSection() {
       <div className={styles.strip}>
         <div className={styles.stripInner}>
           <p className={styles.stripText}>
-            <strong>Inscrições abertas</strong> — garanta sua vaga no vestibular 2026
+            <strong>Inscrições abertas</strong> — garanta sua vaga no vestibular 2027.1
           </p>
           <EnrollmentButton highlight variant="secondary" className={styles.stripCta}>
             Fazer inscrição agora

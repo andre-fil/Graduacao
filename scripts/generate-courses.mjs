@@ -10,15 +10,9 @@ const SCHEDULE_EAD = 'Horários flexíveis na plataforma EAD';
 const IMG = 'course-cover';
 const BANNER = [{ id: 'banner-padrao', image: IMG, alt: 'Banner promocional FEMAF — Graduação' }];
 
-/** Mensalidades presencial sede 2026 (reajuste 5%) */
-function presencialPrice(original, punctualityPercent, punctualityDiscount) {
+/** Mensalidades Edital Vestibular FEMAF 2027.1 */
+function coursePrice(original, punctualityPercent, punctualityDiscount) {
   return { original, punctualityPercent, punctualityDiscount };
-}
-
-function eadPrice(punctualityDiscount, punctualityPercent) {
-  const original =
-    Math.round((punctualityDiscount / (1 - punctualityPercent / 100)) * 100) / 100;
-  return { original, punctualityDiscount, punctualityPercent };
 }
 
 const FAQ = [
@@ -30,7 +24,7 @@ const FAQ = [
   {
     question: 'Como funciona o desconto de mensalidade?',
     answer:
-      'A mensalidade integral é o valor tabelado do curso em 2026. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre "Valor integral" e "Valor com desconto (pontualidade)" para simular a mensalidade.',
+      'A mensalidade integral é o valor tabelado do curso para o Vestibular 2027.1. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre "Valor integral" e "Valor com desconto (pontualidade)" para simular a mensalidade.',
   },
   {
     question: 'A FEMAF possui laboratórios?',
@@ -104,7 +98,7 @@ const courses = [
       { shift: 'matutino', time: SCHEDULE_MATUTINO },
       { shift: 'noturno', time: SCHEDULE_NOTURNO },
     ],
-    price: presencialPrice(445.98, 15, 379.0),
+    price: coursePrice(445.98, 15, 379.0),
     summary: 'Formação completa para atuar na educação, saúde e esporte com base científica e prática profissional.',
     description:
       'O curso de Educação Física da FEMAF prepara profissionais para planejar, prescrever e orientar práticas corporais em escolas, academias, clubes e projetos esportivos. A formação integra fundamentos pedagógicos, científicos e biomecânicos com vivências práticas ao longo da graduação.\n\nO egresso desenvolve competências para promover saúde, qualidade de vida e desempenho motor, atuando com ética e responsabilidade social. O currículo contempla estágios supervisionados e atividades que aproximam o estudante das demandas reais do mercado.\n\nCom habilitação em licenciatura e bacharelado, o curso amplia as possibilidades de atuação em ambientes educacionais, esportivos e de promoção da saúde.',
@@ -126,7 +120,7 @@ const courses = [
     duration: '5 anos',
     shift: ['noturno'],
     schedules: [{ shift: 'noturno', time: SCHEDULE_NOTURNO }],
-    price: presencialPrice(1249.0, 25, 936.75),
+    price: coursePrice(1249.0, 25, 936.0),
     summary: 'Projete e gerencie obras de infraestrutura com sólida formação técnica e visão sustentável.',
     description:
       'A Engenharia Civil na FEMAF forma profissionais aptos a projetar, dimensionar e gerenciar obras de construção civil, saneamento e infraestrutura urbana. A grade equilibra teoria e prática em laboratórios, projetos integradores e atividades de campo.\n\nO estudante desenvolve raciocínio analítico, domínio de normas técnicas e capacidade de liderar equipes em diferentes etapas de empreendimentos. A formação enfatiza sustentabilidade, segurança e eficiência nos processos construtivos.\n\nAo longo do curso, o aluno é preparado para atuar em empresas, órgãos públicos e escritórios de engenharia com responsabilidade técnica e ética profissional.',
@@ -151,7 +145,7 @@ const courses = [
       { shift: 'matutino', time: SCHEDULE_MATUTINO },
       { shift: 'noturno', time: SCHEDULE_NOTURNO },
     ],
-    price: presencialPrice(1311.45, 30, 918.0),
+    price: coursePrice(1331.0, 20, 1064.8),
     summary: 'Atue na promoção da saúde com domínio de medicamentos, análises clínicas e atenção farmacêutica.',
     description:
       'O curso de Farmácia da FEMAF forma profissionais para desenvolver, produzir, dispensar e monitorar medicamentos com segurança e responsabilidade. A formação combina bases científicas, prática laboratorial e estágios em farmácias e instituições de saúde.\n\nO estudante aprende a atuar na atenção farmacêutica, orientando pacientes e contribuindo para o uso racional de medicamentos. O currículo abrange áreas como farmacologia, química, microbiologia e legislação sanitária.\n\nA FEMAF oferece infraestrutura de laboratórios e parcerias que aproximam o aluno da realidade profissional desde os primeiros semestres.',
@@ -174,7 +168,7 @@ const courses = [
     shift: ['noturno'],
     schedules: [{ shift: 'noturno', time: SCHEDULE_NOTURNO }],
     mecPortaria: 'Portaria MEC nº 119 de 22/04/2020',
-    price: presencialPrice(1382.0, 10, 1243.8),
+    price: coursePrice(1382.0, 10, 1243.8),
     summary: 'Construa uma carreira sólida no universo jurídico com formação crítica, ética e atualizada.',
     description:
       'O curso de Direito da FEMAF forma bacharéis preparados para atuar em advocacia, consultoria, carreiras públicas e departamentos jurídicos empresariais. A grade contempla os fundamentos do direito público e privado com abordagem crítica e contextualizada.\n\nO núcleo de práticas jurídicas oferece vivência em peças processuais, simulações e atividades que desenvolvem argumentação e raciocínio jurídico. A formação enfatiza ética, cidadania e compromisso com a justiça social.\n\nO estudante é acompanhado por corpo docente experiente, com foco na preparação para o mercado de trabalho e para o Exame da Ordem.',
@@ -201,9 +195,9 @@ const courses = [
       { shift: 'ead', time: SCHEDULE_EAD },
     ],
     mecPortaria: 'Portaria MEC nº 1013 de 15/09/2021',
-    price: presencialPrice(254.67, 10, 229.2),
+    price: coursePrice(254.67, 10, 229.2),
     pricesByModality: {
-      ead: eadPrice(159.9, 30.78),
+      ead: coursePrice(254.67, 10, 229.2),
     },
     summary: 'Transforme vidas pela educação com formação humanista, prática e compromisso social.',
     description:
@@ -220,18 +214,24 @@ const courses = [
     name: 'Serviço Social',
     degree: 'Bacharelado',
     areaId: 'humanas',
-    modalityIds: ['ead'],
+    modalityIds: ['presencial', 'ead'],
     featured: false,
-    tags: ['serviço social', 'assistência social', 'políticas públicas', 'ead'],
+    tags: ['serviço social', 'assistência social', 'políticas públicas', 'presencial', 'ead'],
     duration: '4 anos',
-    shift: ['ead'],
-    schedules: [{ shift: 'ead', time: SCHEDULE_EAD }],
-    mecPortaria: 'Portaria MEC nº 567 de 16/12/2019',
-    price: eadPrice(179.9, 28.04),
+    shift: ['noturno', 'ead'],
+    schedules: [
+      { shift: 'noturno', time: SCHEDULE_NOTURNO },
+      { shift: 'ead', time: SCHEDULE_EAD },
+    ],
+    mecPortaria: 'Portaria MEC nº 34 de 01/03/2016',
+    price: coursePrice(445.98, 15, 379.0),
+    pricesByModality: {
+      ead: coursePrice(310.0, 38.74, 189.9),
+    },
     summary: 'Promova justiça social e defesa de direitos com formação crítica e comprometida.',
     description:
-      'O curso de Serviço Social da FEMAF forma profissionais para intervenção em políticas públicas, assistência social e organizações, com foco na transformação de realidades sociais. A formação desenvolve olhar crítico sobre as desigualdades e competências para atuação junto a indivíduos, famílias e comunidades.\n\nOferecido em EAD, o curso integra teoria e prática em equipamentos sociais, estágios e projetos extensionistas. O estudante aprende a planejar, executar e avaliar ações que promovam inclusão e cidadania.\n\nA ética profissional e o compromisso com os direitos humanos orientam toda a trajetória formativa.',
-    highlights: ['100% EAD', 'Estágios em equipamentos sociais', 'Formação político-social', 'Compromisso com direitos humanos'],
+      'O curso de Serviço Social da FEMAF forma profissionais para intervenção em políticas públicas, assistência social e organizações, com foco na transformação de realidades sociais. A formação desenvolve olhar crítico sobre as desigualdades e competências para atuação junto a indivíduos, famílias e comunidades.\n\nDisponível nas modalidades presencial e EAD, o curso integra teoria e prática em equipamentos sociais, estágios e projetos extensionistas. O estudante aprende a planejar, executar e avaliar ações que promovam inclusão e cidadania.\n\nA ética profissional e o compromisso com os direitos humanos orientam toda a trajetória formativa.',
+    highlights: ['Presencial e EAD', 'Estágios em equipamentos sociais', 'Formação político-social', 'Compromisso com direitos humanos'],
     graduateProfile:
       'O assistente social egresso da FEMAF é um profissional crítico, ético e engajado na defesa de direitos. Está capacitado para diagnosticar situações sociais, planejar intervenções e articular redes de proteção e assistência.\n\nAtua com sensibilidade cultural e compromisso com a transformação de condições que geram exclusão e vulnerabilidade.',
     jobMarket:
@@ -252,7 +252,7 @@ const courses = [
       { shift: 'matutino', time: SCHEDULE_MATUTINO },
       { shift: 'noturno', time: SCHEDULE_NOTURNO },
     ],
-    price: presencialPrice(1030.28, 20, 824.0),
+    price: coursePrice(1249.0, 20, 999.0),
     summary: 'Compreenda o comportamento humano e atue na promoção da saúde mental e do bem-estar.',
     description:
       'O curso de Psicologia da FEMAF forma profissionais para atuar em clínica, organizações, escolas e comunidades, com base científica e abordagem humanizada. O currículo abrange áreas como desenvolvimento humano, psicopatologia, avaliação psicológica e intervenções terapêuticas.\n\nEstágios supervisionados e atividades práticas em clínica-escola permitem ao estudante desenvolver escuta, análise e intervenção sob orientação de profissionais experientes. A formação enfatiza ética, reflexividade e respeito à diversidade.\n\nO egresso está preparado para compreender o comportamento humano em suas múltiplas dimensões e contribuir para a saúde mental individual e coletiva.',
@@ -275,7 +275,7 @@ const courses = [
     shift: ['ead'],
     schedules: [{ shift: 'ead', time: SCHEDULE_EAD }],
     mecPortaria: 'Portaria MEC nº 567 de 18/12/2019',
-    price: eadPrice(179.9, 28.04),
+    price: coursePrice(440.48, 25, 330.36),
     summary: 'Domine contabilidade, finanças e auditoria com formação alinhada às exigências do mercado.',
     description:
       'O curso de Ciências Contábeis da FEMAF forma profissionais para registrar, analisar e auditar informações financeiras de organizações de todos os portes. A grade contempla contabilidade, legislação tributária, custos, auditoria e gestão financeira.\n\nOferecido em EAD, o curso permite conciliar estudos e trabalho com flexibilidade. A formação prepara o aluno para os desafios da contabilidade moderna, incluindo sistemas de informação e conformidade fiscal.\n\nO egresso desenvolve rigor técnico, visão analítica e capacidade de apoiar decisões estratégicas com base em dados confiáveis.',
@@ -298,7 +298,7 @@ const courses = [
     shift: ['ead'],
     schedules: [{ shift: 'ead', time: SCHEDULE_EAD }],
     mecPortaria: 'Portaria MEC nº 451 de 05/02/2022',
-    price: eadPrice(189.9, 38.75),
+    price: coursePrice(310.0, 38.74, 189.9),
     summary: 'Gerencie propriedades rurais e negócios do agronegócio com visão empreendedora e sustentável.',
     description:
       'O curso Tecnólogo em Agronegócio da FEMAF forma profissionais para gestão de produção, comercialização e sustentabilidade no setor agropecuário. Em 3 anos, o estudante desenvolve competências em gestão rural, economia agrícola, marketing e logística do agronegócio.\n\nNa modalidade EAD, o curso oferece flexibilidade para quem já atua no campo ou deseja empreender no setor. A formação combina conteúdos técnicos e gerenciais alinhados às demandas do mercado agro brasileiro.\n\nO egresso está preparado para tomar decisões estratégicas em propriedades rurais, cooperativas e empresas do agronegócio.',
@@ -321,7 +321,7 @@ const courses = [
     shift: ['ead'],
     schedules: [{ shift: 'ead', time: SCHEDULE_EAD }],
     mecPortaria: 'Portaria MEC nº 567 de 18/12/2019',
-    price: eadPrice(179.9, 28.04),
+    price: coursePrice(262.5, 10, 236.25),
     summary: 'Forme-se para liderar equipes e gerenciar negócios com visão estratégica e empreendedora.',
     description:
       'O curso de Administração da FEMAF prepara profissionais para planejar, organizar e dirigir recursos em organizações de todos os portes. A formação generalista abrange gestão de pessoas, finanças, marketing, operações e empreendedorismo.\n\nDisponível em EAD, o curso atende quem busca flexibilidade para estudar e trabalhar. Projetos práticos e estudos de caso aproximam o aluno de situações reais de gestão.\n\nO egresso desenvolve capacidade de liderança, tomada de decisão e visão sistêmica dos negócios, competências essenciais em um mercado dinâmico e competitivo.',

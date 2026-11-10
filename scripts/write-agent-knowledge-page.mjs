@@ -93,7 +93,7 @@ function renderPriceIndex(courses, modalityName) {
 
   return `
 <article id="tabela-precos">
-  <h2>TABELA DE PREÇOS 2026 — uma linha por curso e modalidade</h2>
+  <h2>TABELA DE PREÇOS 2027.1 — uma linha por curso e modalidade</h2>
   <p>Esta é a fonte de mensalidade da graduação. Ao informar valor, use SOMENTE a linha em que CURSO e MODALIDADE coincidem com a pergunta. Não copie o preço de outro curso. Pós-graduação não tem preço nesta tabela.</p>
   ${htmlLines}
   <pre>${escapeHtml(text)}</pre>
@@ -374,7 +374,7 @@ export function writeAgentKnowledgePage(courses) {
   <header>
     <h1>Fonte de conhecimento — Catálogo de cursos FEMAF</h1>
   ${renderPriceIndex(courses, modalityName)}
-    <p>Faculdade de Educação Memorial Adelaide Franco (FEMAF), sede em Pedreiras–MA. Documento de referência para atendimento. Dados de mensalidade referentes a 2026.</p>
+    <p>Faculdade de Educação Memorial Adelaide Franco (FEMAF), sede em Pedreiras–MA. Documento de referência para atendimento. Dados de mensalidade referentes ao Vestibular 2027.1.</p>
     <p class="note"><strong>Regra de turno (presencial):</strong> os cursos presenciais funcionam no turno <strong>noturno</strong>. ${escapeHtml(PRESENCIAL_SHIFT_NOTICE)}</p>
     <p><strong>Inscrição (todas as formas de ingresso):</strong> <a href="${ENROLLMENT_URL}">${ENROLLMENT_URL}</a></p>
     <p><strong>WhatsApp:</strong> ${WHATSAPP_DISPLAY}</p>
@@ -384,7 +384,7 @@ export function writeAgentKnowledgePage(courses) {
   <nav>
     <h2>Índice desta base</h2>
     <ul>
-      <li><a href="#tabela-precos">Tabela de preços 2026</a></li>
+      <li><a href="#tabela-precos">Tabela de preços 2027.1</a></li>
       <li><a href="#sobre-a-femaf">Sobre a FEMAF (instituição)</a></li>
       <li><a href="#programas-ingresso">Programas de ingresso, FIES, PROUNI e convênios</a></li>
       <li><a href="#pos-graduacao">Pós-graduação EAD</a></li>
@@ -424,10 +424,10 @@ export function writeAgentKnowledgePage(courses) {
 <head>
   <meta charset="UTF-8" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Preços graduação FEMAF 2026 — base do agente</title>
+  <title>Preços graduação FEMAF 2027.1 — base do agente</title>
 </head>
 <body>
-  <h1>Preços da graduação FEMAF 2026</h1>
+  <h1>Preços da graduação FEMAF 2027.1</h1>
   <p>Use somente a linha cujo curso e modalidade coincidem com a pergunta. Não misture com pós-graduação.</p>
   ${renderPriceIndex(courses, modalityName)}
 </body>

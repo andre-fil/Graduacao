@@ -1,5 +1,5 @@
 export interface CoursePrice {
-  /** Mensalidade integral (reajuste 2026) */
+  /** Mensalidade integral (Vestibular 2027.1) */
   original: number;
   /** Valor com desconto de pagamento em dias (pontualidade) */
   punctualityDiscount: number;

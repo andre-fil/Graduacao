@@ -28,7 +28,7 @@ export const LOREM_FAQ = [
   {
     question: 'Como funciona o desconto de mensalidade?',
     answer:
-      'A mensalidade integral é o valor tabelado do curso em 2026. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre "Valor integral" e "Valor com desconto (pontualidade)" para simular a mensalidade.',
+      'A mensalidade integral é o valor tabelado do curso para o Vestibular 2027.1. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre "Valor integral" e "Valor com desconto (pontualidade)" para simular a mensalidade.',
   },
   {
     question: 'A FEMAF possui laboratórios?',
