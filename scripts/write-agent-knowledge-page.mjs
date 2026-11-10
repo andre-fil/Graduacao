@@ -123,6 +123,32 @@ function offerBlock(course, modalityId, modalityName) {
 </section>`;
 }
 
+function renderVestibularSection(vestibular) {
+  if (!vestibular) return '';
+
+  return `
+<article id="vestibular-2027-1">
+  <h2>${escapeHtml(vestibular.processName)} — regras do edital (exceto mensalidades)</h2>
+  ${field('Edital', escapeHtml(vestibular.editalNumber))}
+  ${field('Ingresso', escapeHtml(vestibular.ingressSemester))}
+  ${field('PDF do edital', `<a href="${escapeHtml(vestibular.editalUrl)}">${escapeHtml(vestibular.editalUrl)}</a>`)}
+  ${field('Período de inscrição', escapeHtml(vestibular.enrollmentPeriod))}
+  ${field('Taxa de inscrição', escapeHtml(vestibular.enrollmentFee))}
+  ${field('Site de inscrição', `<a href="${escapeHtml(vestibular.enrollmentSite)}">${escapeHtml(vestibular.enrollmentSite)}</a>`)}
+  ${field('Formato da prova', escapeHtml(vestibular.examFormat))}
+  ${field('Modalidade e agendamento da prova', escapeHtml(vestibular.examModes))}
+  ${field('ENEM — anos aceitos', escapeHtml(vestibular.enemYears))}
+  ${field('Concorrência cumulativa', escapeHtml(vestibular.cumulativeSelection))}
+  ${field('Vagas', escapeHtml(vestibular.vacancies))}
+  ${field('Matrícula dos aprovados', escapeHtml(vestibular.approvedEnrollmentPeriod))}
+  ${field('WhatsApp', escapeHtml(vestibular.whatsapp))}
+  ${field('Telefone (edital)', escapeHtml(vestibular.phone))}
+  ${field('E-mail acadêmico / atendimento especial', escapeHtml(vestibular.specialNeedsEmail))}
+  <h3>Como responder perguntas do vestibular</h3>
+  ${list(vestibular.agentGuidance)}
+</article>`;
+}
+
 function renderEnrollmentSection(ingress) {
   const matricula = ingress?.matricula;
   if (!matricula) return '';
@@ -133,6 +159,7 @@ function renderEnrollmentSection(ingress) {
   ${field('Setor Acadêmico (presencial)', escapeHtml(`${matricula.academicSector.name} — ${matricula.academicSector.days}, ${matricula.academicSector.hours}. Endereço: ${matricula.academicSector.address ?? ''}`.trim()))}
   <h3>Lista de documentos</h3>
   ${list(matricula.documents)}
+  <p class="note"><strong>Atenção:</strong> não solicitar comprovante de renda. Esse documento não faz parte da orientação desta base.</p>
   <h3>Como entregar, conforme a modalidade</h3>
   ${field('EAD', escapeHtml(matricula.delivery.ead))}
   ${field('Presencial', escapeHtml(matricula.delivery.presencial))}
@@ -378,6 +405,12 @@ export function writeAgentKnowledgePage(courses) {
     <p class="note"><strong>Regra de turno (presencial):</strong> os cursos presenciais funcionam no turno <strong>noturno</strong>. ${escapeHtml(PRESENCIAL_SHIFT_NOTICE)}</p>
     <p><strong>Inscrição (todas as formas de ingresso):</strong> <a href="${ENROLLMENT_URL}">${ENROLLMENT_URL}</a></p>
     <p><strong>WhatsApp:</strong> ${WHATSAPP_DISPLAY}</p>
+    ${
+      ingress.vestibular
+        ? `<p><strong>Edital ${escapeHtml(ingress.vestibular.processName)}:</strong> <a href="${escapeHtml(ingress.vestibular.editalUrl)}">${escapeHtml(ingress.vestibular.editalUrl)}</a></p>
+    <p><strong>Inscrições ${escapeHtml(ingress.vestibular.processName)}:</strong> ${escapeHtml(ingress.vestibular.enrollmentPeriod)} — taxa ${escapeHtml(ingress.vestibular.enrollmentFee).toLowerCase()}.</p>`
+        : ''
+    }
     <p>${escapeHtml(ingress.generalInfo)}</p>
   </header>
 
@@ -385,6 +418,7 @@ export function writeAgentKnowledgePage(courses) {
     <h2>Índice desta base</h2>
     <ul>
       <li><a href="#tabela-precos">Tabela de preços 2027.1</a></li>
+      <li><a href="#vestibular-2027-1">Vestibular 2027.1 (edital)</a></li>
       <li><a href="#sobre-a-femaf">Sobre a FEMAF (instituição)</a></li>
       <li><a href="#programas-ingresso">Programas de ingresso, FIES, PROUNI e convênios</a></li>
       <li><a href="#pos-graduacao">Pós-graduação EAD</a></li>
@@ -393,6 +427,8 @@ export function writeAgentKnowledgePage(courses) {
       ${index}
     </ul>
   </nav>
+
+  ${renderVestibularSection(ingress.vestibular)}
 
   ${renderInstitutionSection(institution)}
 
