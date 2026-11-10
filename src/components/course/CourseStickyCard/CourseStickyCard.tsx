@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { editalLinkProps } from '../../../constants/enrollment';
 import type { Course } from '../../../types';
 import { useContact } from '../../../hooks/useContact';
 import { getModalityById } from '../../../services';
@@ -116,6 +117,9 @@ export function CourseStickyCard({ course }: CourseStickyCardProps) {
         <EnrollmentButton highlight className={styles.action}>
           Inscreva-se no vestibular
         </EnrollmentButton>
+        <Button as="a" {...editalLinkProps} variant="outline" className={styles.action}>
+          Acessar edital
+        </Button>
         <Button as="a" href={whatsappUrl} variant="outline" className={styles.whatsapp}>
           Tirar dúvidas no WhatsApp
         </Button>

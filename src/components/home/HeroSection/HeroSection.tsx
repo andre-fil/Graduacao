@@ -1,5 +1,5 @@
 import { ROUTES } from '../../../app/routes';
-import { enrollmentLinkProps } from '../../../constants/enrollment';
+import { editalLinkProps, enrollmentLinkProps } from '../../../constants/enrollment';
 import { useCourses } from '../../../hooks/useCourses';
 import { Button } from '../../ui/Button';
 import { EnrollmentButton } from '../../ui/EnrollmentButton';
@@ -29,23 +29,29 @@ export function HeroSection() {
             <EnrollmentButton highlight className={styles.enrollCta}>
               Inscreva-se no vestibular
             </EnrollmentButton>
+            <Button as="a" {...editalLinkProps} variant="secondary" className={styles.editalCta}>
+              Acessar edital
+            </Button>
             <Button as="link" to={ROUTES.courses} variant="secondary">
               Ver todos os cursos
             </Button>
           </div>
         </div>
 
-        <a
-          {...enrollmentLinkProps}
-          className={styles.vestibularCard}
-          aria-label="Acessar inscrição do vestibular em vestibular2.femaf.com.br"
-        >
+        <div className={styles.vestibularCard}>
           <span className={styles.vestibularEyebrow}>Processo seletivo 2027.1</span>
           <strong className={styles.vestibularTitle}>Vestibular FEMAF</strong>
           <p className={styles.vestibularText}>
             Inscrição online, gratuita e rápida para o 1º semestre de 2027.
           </p>
-          <span className={styles.vestibularLink}>vestibular2.femaf.com.br →</span>
+          <div className={styles.vestibularActions}>
+            <a {...enrollmentLinkProps} className={styles.vestibularLink}>
+              Inscreva-se →
+            </a>
+            <a {...editalLinkProps} className={styles.vestibularEdital}>
+              Acessar edital
+            </a>
+          </div>
           <ul className={styles.vestibularMeta}>
             <li>
               <strong>{courses.length}</strong> cursos
@@ -55,7 +61,7 @@ export function HeroSection() {
             </li>
             <li>MEC</li>
           </ul>
-        </a>
+        </div>
       </div>
 
       <div className={styles.strip}>

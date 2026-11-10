@@ -61,8 +61,28 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-.enrollCta {
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.enrollCta,
+.editalCta {
   max-width: 280px;
+}
+
+.editalCta {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #fff;
+}
+
+.editalCta:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.7);
+  color: #fff;
 }
 
 @media (max-width: 640px) {

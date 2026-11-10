@@ -1,4 +1,5 @@
 import { ROUTES } from '../../../app/routes';
+import { editalLinkProps } from '../../../constants/enrollment';
 import type { Course } from '../../../types';
 import { getModalityById } from '../../../services';
 import { getCourseCoverUrl } from '../../../utils/courseCovers';
@@ -75,6 +76,9 @@ export function CatalogCourseCard({ course, modalityId }: CatalogCourseCardProps
           <EnrollmentButton className={styles.enrollCta}>
             Inscreva-se
           </EnrollmentButton>
+          <Button as="a" {...editalLinkProps} variant="outline" className={styles.cta}>
+            Acessar edital
+          </Button>
           <Button as="link" to={ROUTES.courseDetail(course.slug)} variant="outline" className={styles.cta}>
             Saiba mais
           </Button>

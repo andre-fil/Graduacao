@@ -78,7 +78,6 @@
   gap: var(--spacing-sm);
   padding: var(--spacing-xl);
   border-radius: var(--radius-lg);
-  text-decoration: none;
   color: var(--color-text-inverse);
   background: linear-gradient(
     160deg,
@@ -87,16 +86,26 @@
   );
   border: 1px solid rgba(255, 255, 255, 0.22);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
-  transition:
-    transform var(--transition-fast),
-    box-shadow var(--transition-fast),
-    border-color var(--transition-fast);
 }
 
-.vestibularCard:hover {
-  transform: translateY(-3px);
+.vestibularActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  align-items: center;
+  margin-top: var(--spacing-xs);
+}
+
+.editalCta {
+  background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
+  color: #fff;
+}
+
+.editalCta:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.65);
+  color: #fff;
 }
 
 .vestibularEyebrow {
@@ -120,12 +129,40 @@
   color: rgba(255, 255, 255, 0.88);
 }
 
-.vestibularLink {
-  font-size: 0.9375rem;
+.vestibularLink,
+.vestibularEdital {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
   font-weight: 700;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.9rem;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.vestibularLink {
   color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  background: var(--color-primary);
+  border: 1px solid transparent;
+}
+
+.vestibularLink:hover {
+  background: #0090f0;
+}
+
+.vestibularEdital {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.vestibularEdital:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
 .vestibularMeta {
