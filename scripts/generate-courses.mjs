@@ -87,7 +87,7 @@ const courses = [
   {
     id: 'educacao-fisica',
     name: 'Educação Física',
-    degree: 'Licenciatura / Bacharelado',
+    degree: 'Licenciatura',
     areaId: 'educacao',
     modalityIds: ['presencial'],
     featured: false,
@@ -98,16 +98,17 @@ const courses = [
       { shift: 'matutino', time: SCHEDULE_MATUTINO },
       { shift: 'noturno', time: SCHEDULE_NOTURNO },
     ],
+    mecPortaria: 'Portaria MEC nº 274 de 19/04/2018',
     price: coursePrice(445.98, 15, 379.0),
-    summary: 'Formação completa para atuar na educação, saúde e esporte com base científica e prática profissional.',
+    summary: 'Formação de licenciados para atuar na educação básica com competência pedagógica e compromisso profissional.',
     description:
-      'O curso de Educação Física da FEMAF prepara profissionais para planejar, prescrever e orientar práticas corporais em escolas, academias, clubes e projetos esportivos. A formação integra fundamentos pedagógicos, científicos e biomecânicos com vivências práticas ao longo da graduação.\n\nO egresso desenvolve competências para promover saúde, qualidade de vida e desempenho motor, atuando com ética e responsabilidade social. O currículo contempla estágios supervisionados e atividades que aproximam o estudante das demandas reais do mercado.\n\nCom habilitação em licenciatura e bacharelado, o curso amplia as possibilidades de atuação em ambientes educacionais, esportivos e de promoção da saúde.',
-    highlights: ['Dupla habilitação Licenciatura e Bacharelado', 'Laboratórios e práticas esportivas', 'Estágios supervisionados', 'Mercado em constante expansão'],
+      'O curso de Licenciatura em Educação Física da FEMAF prepara profissionais para exercer a docência com competência, compromisso ético e olhar para a realidade escolar e social. A formação integra fundamentos pedagógicos, científicos e práticas corporais alinhadas à educação básica.\n\nO currículo contempla estágios supervisionados e atividades que aproximam o estudante das demandas reais da escola e de projetos educacionais e esportivos.\n\nO egresso desenvolve competências para planejar, mediar e avaliar processos de ensino e aprendizagem na Educação Física escolar, promovendo saúde, inclusão e qualidade de vida.',
+    highlights: ['Licenciatura reconhecida pelo MEC', 'Estágios supervisionados', 'Foco na educação básica', 'Práticas pedagógicas e esportivas'],
     graduateProfile:
-      'O egresso de Educação Física da FEMAF é um profissional capacitado para planejar, implementar e avaliar programas de atividade física e esporte. Domina conhecimentos sobre anatomia, fisiologia, treinamento e didática, atuando de forma crítica e humanizada.\n\nEstá preparado para liderar grupos, orientar práticas corporais e contribuir para a saúde coletiva, respeitando a diversidade e as necessidades de cada indivíduo.',
+      'O licenciado em Educação Física formado pela FEMAF é um educador capacitado para atuar na educação básica com domínio didático, científico e ético. Domina conhecimentos sobre desenvolvimento humano, práticas corporais e metodologias de ensino.\n\nEstá preparado para planejar aulas, coordenar projetos educacionais e esportivos e contribuir para a formação integral dos estudantes.',
     jobMarket:
-      'O mercado para profissionais de Educação Física permanece aquecido, com oportunidades em escolas, academias, clubes esportivos, consultorias e projetos de saúde. A valorização do bem-estar e do esporte impulsiona a demanda por especialistas qualificados.\n\nEmpresas, clínicas e instituições públicas também buscam esses profissionais para programas de qualidade de vida e prevenção.',
-    careerPaths: ['Professor de Educação Física', 'Personal trainer', 'Preparador físico', 'Gestor esportivo', 'Instrutor de atividades físicas', 'Consultor em saúde e condicionamento'],
+      'Há demanda por licenciados em Educação Física em escolas de educação básica, projetos sociais e esportivos, gestão educacional e setor público. A valorização da Educação Física escolar e de iniciativas de promoção da saúde mantém oportunidades para profissionais qualificados.\n\nQuem une formação pedagógica sólida e prática reflexiva encontra espaço em escolas e programas educacionais.',
+    careerPaths: ['Professor de Educação Física na educação básica', 'Atuação em projetos sociais e esportivos', 'Gestão educacional', 'Setor público e terceiro setor'],
   },
   {
     id: 'engenharia-civil',
