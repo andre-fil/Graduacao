@@ -10,7 +10,7 @@ const SCHEDULE_EAD = 'Horários flexíveis na plataforma EAD';
 const IMG = 'course-cover';
 const BANNER = [{ id: 'banner-padrao', image: IMG, alt: 'Banner promocional FEMAF — Graduação' }];
 
-/** Mensalidades Edital Vestibular FEMAF 2027.1 */
+/** Mensalidades Errata 01 — Edital Vestibular FEMAF 2027.1 */
 function coursePrice(original, punctualityPercent, punctualityDiscount) {
   return { original, punctualityPercent, punctualityDiscount };
 }
@@ -19,12 +19,12 @@ const FAQ = [
   {
     question: 'Quais as formas de ingresso?',
     answer:
-      'A FEMAF oferece Vestibular, ENEM, Transferência e Segunda Graduação. No Vestibular 2027.1 (Edital n.º 008/2026-FEMAF), as inscrições vão de 16/11/2026 a 02/04/2027 às 23h59, são gratuitas e feitas em vestibular2.femaf.com.br. A prova é redação (15 a 20 linhas), online ou presencial. ENEM aceita notas a partir de 2021. Matrícula dos aprovados: 04/01/2027 a 31/03/2027. Em caso de dúvidas, fale com nossa equipe pelo WhatsApp.',
+      'A FEMAF oferece Vestibular, ENEM, Transferência e Segunda Graduação. No Vestibular 2027.1 (Edital n.º 008/2026-FEMAF, Errata 01), as inscrições vão de 16/11/2026 a 30/03/2027 às 23h59, são gratuitas e feitas em vestibular2.femaf.com.br. A prova é redação dissertativo-argumentativa (15 a 20 linhas), online ou presencial. ENEM aceita 2026 (quando divulgada) e 2021 a 2025. Matrícula dos aprovados: 04/01/2027 a 02/04/2027. Em caso de dúvidas, fale com nossa equipe pelo WhatsApp.',
   },
   {
     question: 'Como funciona o desconto de mensalidade?',
     answer:
-      'A mensalidade integral é o valor tabelado do curso para o Vestibular 2027.1. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre "Valor integral" e "Valor com desconto (pontualidade)" para simular a mensalidade.',
+      'A mensalidade integral é o valor tabelado do curso para o Vestibular 2027.1 (Errata 01). O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre "Valor integral" e "Valor com desconto (pontualidade)" para simular a mensalidade.',
   },
   {
     question: 'A FEMAF possui laboratórios?',
@@ -197,7 +197,7 @@ const courses = [
     mecPortaria: 'Portaria MEC nº 1013 de 15/09/2021',
     price: coursePrice(254.67, 10, 229.2),
     pricesByModality: {
-      ead: coursePrice(254.67, 10, 229.2),
+      ead: coursePrice(231.0, 30.78, 159.9),
     },
     summary: 'Transforme vidas pela educação com formação humanista, prática e compromisso social.',
     description:
@@ -226,7 +226,7 @@ const courses = [
     mecPortaria: 'Portaria MEC nº 34 de 01/03/2016',
     price: coursePrice(445.98, 15, 379.0),
     pricesByModality: {
-      ead: coursePrice(310.0, 38.74, 189.9),
+      ead: coursePrice(250.0, 28.04, 179.9),
     },
     summary: 'Promova justiça social e defesa de direitos com formação crítica e comprometida.',
     description:
@@ -275,7 +275,7 @@ const courses = [
     shift: ['ead'],
     schedules: [{ shift: 'ead', time: SCHEDULE_EAD }],
     mecPortaria: 'Portaria MEC nº 567 de 18/12/2019',
-    price: coursePrice(440.48, 25, 330.36),
+    price: coursePrice(250.0, 28.04, 179.9),
     summary: 'Domine contabilidade, finanças e auditoria com formação alinhada às exigências do mercado.',
     description:
       'O curso de Ciências Contábeis da FEMAF forma profissionais para registrar, analisar e auditar informações financeiras de organizações de todos os portes. A grade contempla contabilidade, legislação tributária, custos, auditoria e gestão financeira.\n\nOferecido em EAD, o curso permite conciliar estudos e trabalho com flexibilidade. A formação prepara o aluno para os desafios da contabilidade moderna, incluindo sistemas de informação e conformidade fiscal.\n\nO egresso desenvolve rigor técnico, visão analítica e capacidade de apoiar decisões estratégicas com base em dados confiáveis.',
@@ -321,7 +321,7 @@ const courses = [
     shift: ['ead'],
     schedules: [{ shift: 'ead', time: SCHEDULE_EAD }],
     mecPortaria: 'Portaria MEC nº 567 de 18/12/2019',
-    price: coursePrice(262.5, 10, 236.25),
+    price: coursePrice(250.0, 28.04, 179.9),
     summary: 'Forme-se para liderar equipes e gerenciar negócios com visão estratégica e empreendedora.',
     description:
       'O curso de Administração da FEMAF prepara profissionais para planejar, organizar e dirigir recursos em organizações de todos os portes. A formação generalista abrange gestão de pessoas, finanças, marketing, operações e empreendedorismo.\n\nDisponível em EAD, o curso atende quem busca flexibilidade para estudar e trabalhar. Projetos práticos e estudos de caso aproximam o aluno de situações reais de gestão.\n\nO egresso desenvolve capacidade de liderança, tomada de decisão e visão sistêmica dos negócios, competências essenciais em um mercado dinâmico e competitivo.',

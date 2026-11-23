@@ -23,12 +23,12 @@ export const LOREM_FAQ = [
   {
     question: 'Quais as formas de ingresso?',
     answer:
-      'A FEMAF oferece Vestibular, ENEM, Transferência e Segunda Graduação. No Vestibular 2027.1 (Edital n.º 008/2026-FEMAF), as inscrições vão de 16/11/2026 a 02/04/2027 às 23h59, são gratuitas e feitas em vestibular2.femaf.com.br. A prova é redação (15 a 20 linhas), online ou presencial. ENEM aceita notas a partir de 2021. Matrícula dos aprovados: 04/01/2027 a 31/03/2027. Em caso de dúvidas, fale com nossa equipe pelo WhatsApp.',
+      'A FEMAF oferece Vestibular, ENEM, Transferência e Segunda Graduação. No Vestibular 2027.1 (Edital n.º 008/2026-FEMAF, Errata 01), as inscrições vão de 16/11/2026 a 30/03/2027 às 23h59, são gratuitas e feitas em vestibular2.femaf.com.br. A prova é redação dissertativo-argumentativa (15 a 20 linhas), online ou presencial. ENEM aceita 2026 (quando divulgada) e 2021 a 2025. Matrícula dos aprovados: 04/01/2027 a 02/04/2027. Em caso de dúvidas, fale com nossa equipe pelo WhatsApp.',
   },
   {
     question: 'Como funciona o desconto de mensalidade?',
     answer:
-      'A mensalidade integral é o valor tabelado do curso para o Vestibular 2027.1. O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre "Valor integral" e "Valor com desconto (pontualidade)" para simular a mensalidade.',
+      'A mensalidade integral é o valor tabelado do curso para o Vestibular 2027.1 (Errata 01). O desconto de pontualidade é concedido quando o pagamento é realizado em dias, conforme o percentual vigente para cada curso. No card de investimento, você pode alternar entre "Valor integral" e "Valor com desconto (pontualidade)" para simular a mensalidade.',
   },
   {
     question: 'A FEMAF possui laboratórios?',
