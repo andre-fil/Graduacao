@@ -1,115 +1,282 @@
 .hero {
   position: relative;
-  background: #0a3d8f;
+  background-color: var(--color-primary-dark);
   color: var(--color-text-inverse);
   overflow: hidden;
 }
 
-.srOnly {
+.pattern {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 85% 20%, rgba(0, 128, 216, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 10% 80%, rgba(0, 128, 216, 0.08) 0%, transparent 40%);
+  pointer-events: none;
 }
 
-.bannerFrame {
-  width: 100%;
-  background: #0a3d8f;
-}
-
-.bannerImage {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: min(52vh, 520px);
-  object-fit: cover;
-  object-position: center top;
-}
-
-.panel {
-  background: linear-gradient(180deg, #0a3d8f 0%, var(--color-primary-dark) 100%);
-  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-xl);
-  border-top: 3px solid #e91e8c;
-}
-
-.panelInner {
+.inner {
+  position: relative;
   max-width: var(--max-width);
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
+  padding: var(--spacing-3xl) var(--spacing-md) var(--spacing-2xl);
+  display: grid;
+  gap: var(--spacing-2xl);
+  align-items: center;
 }
 
-.panelText {
-  margin: 0;
-  font-size: 0.9375rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9);
-  text-align: center;
+.content {
+  max-width: 640px;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 196, 0, 0.18);
+  color: #ffe08a;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-lg);
+  border: 1px solid rgba(255, 196, 0, 0.35);
+}
+
+.title {
+  font-size: clamp(1.875rem, 5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--spacing-md);
+}
+
+.description {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: var(--spacing-xl);
+  max-width: 52ch;
+}
+
+.search {
+  margin-bottom: var(--spacing-lg);
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-sm);
-  justify-content: center;
 }
 
-.enrollCta,
-.editalCta,
-.coursesCta {
-  flex: 1 1 180px;
-  max-width: 280px;
+.stats {
+  display: grid;
+  gap: var(--spacing-md);
 }
 
-.editalCta,
-.coursesCta {
+.vestibularCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-inverse);
+  background: linear-gradient(
+    160deg,
+    rgba(0, 128, 216, 0.45) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.vestibularActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  align-items: center;
+  margin-top: var(--spacing-xs);
+}
+
+.editalCta {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.4);
   color: #fff;
 }
 
-.editalCta:hover,
-.coursesCta:hover {
+.editalCta:hover {
   background: rgba(255, 255, 255, 0.22);
-  border-color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.65);
   color: #fff;
 }
 
-.search {
-  width: 100%;
-  max-width: 640px;
+.vestibularEyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b3dbff;
+}
+
+.vestibularTitle {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.vestibularText {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.vestibularLink,
+.vestibularEdital {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.9rem;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.vestibularLink {
+  color: #fff;
+  background: var(--color-primary);
+  border: 1px solid transparent;
+}
+
+.vestibularLink:hover {
+  background: #0090f0;
+}
+
+.vestibularEdital {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.vestibularEdital:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.vestibularMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-sm) 0 0;
+  padding: var(--spacing-md) 0 0;
+  list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.vestibularMeta li {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.75);
+  padding-right: var(--spacing-sm);
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.vestibularMeta li:last-child {
+  border-right: none;
+}
+
+.vestibularMeta strong {
+  display: block;
+  font-size: 1.125rem;
+  color: #fff;
+}
+
+.statCard {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.statCard strong {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--color-text-inverse);
+}
+
+.statCard span {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.statText {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-inverse);
+  line-height: 1.4;
+}
+
+.strip {
+  position: relative;
+  background: var(--color-primary);
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.stripInner {
+  max-width: var(--max-width);
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-align: center;
+}
+
+.stripText {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-inverse);
+}
+
+.stripCta {
+  min-width: 240px;
 }
 
 @media (min-width: 768px) {
-  .bannerImage {
-    max-height: min(56vh, 560px);
-    object-position: center center;
-  }
-
-  .panelText {
+  .stripInner {
+    flex-direction: row;
+    justify-content: center;
     text-align: left;
-  }
-
-  .actions {
-    justify-content: flex-start;
-  }
-
-  .enrollCta,
-  .editalCta,
-  .coursesCta {
-    flex: 0 1 auto;
   }
 }
 
-@media (min-width: 1100px) {
-  .bannerImage {
-    max-height: 600px;
+.enrollCta {
+  flex-shrink: 0;
+}
+
+@media (min-width: 900px) {
+  .inner {
+    grid-template-columns: 1.2fr 0.8fr;
+    padding-top: var(--spacing-3xl);
+    padding-bottom: var(--spacing-3xl);
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .vestibularCard {
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 540px) {
+  .inner {
+    padding-top: var(--spacing-2xl);
   }
 }
