@@ -8,6 +8,7 @@ import { Container } from '../../components/layout/Container';
 import { Breadcrumb } from '../../components/ui/Breadcrumb';
 import { PageHeader } from '../../components/ui/PageHeader';
 import { useCatalogFilters } from '../../hooks/useCatalogFilters';
+import { getCatalogCourseOffers } from '../../utils/coursePrice';
 import styles from './CatalogPage.module.css';
 
 export function CatalogPage() {
@@ -18,6 +19,10 @@ export function CatalogPage() {
     updateFilters,
     clearFilters,
   } = useCatalogFilters();
+
+  const offers = courses.flatMap((course) =>
+    getCatalogCourseOffers(course, filters.modalityId),
+  );
 
   return (
     <Container>
@@ -52,8 +57,8 @@ export function CatalogPage() {
         <section className={styles.results} aria-label="Resultados da busca">
           <div className={styles.resultsHeader}>
             <p className={styles.count}>
-              {courses.length}{' '}
-              {courses.length === 1 ? 'curso encontrado' : 'cursos encontrados'}
+              {offers.length}{' '}
+              {offers.length === 1 ? 'curso encontrado' : 'cursos encontrados'}
             </p>
 
             {filters.query && (
@@ -63,13 +68,13 @@ export function CatalogPage() {
             )}
           </div>
 
-          {courses.length > 0 ? (
+          {offers.length > 0 ? (
             <CourseGrid>
-              {courses.map((course) => (
+              {offers.map(({ course, modalityId }) => (
                 <CatalogCourseCard
-                  key={course.id}
+                  key={modalityId ? `${course.id}-${modalityId}` : course.id}
                   course={course}
-                  modalityId={filters.modalityId || undefined}
+                  modalityId={modalityId}
                 />
               ))}
             </CourseGrid>

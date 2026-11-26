@@ -20,7 +20,8 @@ interface CatalogCourseCardProps {
 }
 
 export function CatalogCourseCard({ course, modalityId }: CatalogCourseCardProps) {
-  const modalities = course.modalityIds
+  const modalityIdsForBadge = modalityId ? [modalityId] : course.modalityIds;
+  const modalities = modalityIdsForBadge
     .map((id) => getModalityById(id)?.name)
     .filter(Boolean);
 

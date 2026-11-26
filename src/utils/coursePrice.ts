@@ -34,6 +34,36 @@ export function shouldShowFromPrice(course: Course, modalityId?: string): boolea
   return Boolean(course.pricesByModality && course.modalityIds.length > 1);
 }
 
+/** True quando há mais de uma modalidade com mensalidade diferente. */
+export function hasDivergentModalityPrices(course: Course): boolean {
+  const entries = getCoursePriceEntries(course);
+  if (entries.length < 2) return false;
+  const keys = new Set(
+    entries.map(
+      (e) =>
+        `${e.price.original}|${e.price.punctualityDiscount}|${e.price.punctualityPercent}`,
+    ),
+  );
+  return keys.size > 1;
+}
+
+/**
+ * Ofertas do catálogo: curso com preços distintos por modalidade vira um card por modalidade
+ * (evita badge Presencial+EAD com um único preço ambíguo).
+ */
+export function getCatalogCourseOffers(
+  course: Course,
+  modalityFilterId?: string | null,
+): Array<{ course: Course; modalityId?: string }> {
+  if (modalityFilterId) {
+    return [{ course, modalityId: modalityFilterId }];
+  }
+  if (hasDivergentModalityPrices(course)) {
+    return course.modalityIds.map((modalityId) => ({ course, modalityId }));
+  }
+  return [{ course }];
+}
+
 export const EAD_NAME_SUFFIX = ' -ead';
 
 export function getCourseDisplayName(course: Course, modalityId?: string): string {
